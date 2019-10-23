@@ -6,7 +6,7 @@
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
   <meta name="description" content="H-GAC Flowmap">
 
-  <title>Canvas Flowmap Layer with JSAPI v3</title>
+  <title>H-GAC 25 Sector Flow Map</title>
 
   <link rel="stylesheet" href="https://js.arcgis.com/3.29/esri/themes/calcite/esri/esri.css">
   <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/css/calcite-web.min.css">
@@ -38,86 +38,81 @@
       opacity: 0.85;
     }
 
-    .controls-panel2{
-      z-index: 30;
-      position: absolute;
-      top: 15px;
-      left: 75px;
-      width: 300px;
-      height: 300px;
-      opacity: 0.85;
-    }
-
     .custom-card-shadow{
       -moz-box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
       -webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
       box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
     }
 
-	#legendDiv{
-		z-index: 30;
-		top: 70%;
-		left: 15px;
-		position: absolute;
-		width: 275px;
-		height: 275px;
-		opacity: 0.9;
-		background-color: whitesmoke;
-		padding: 10px;
-	}
+    #legendDiv{
+      z-index: 30;
+      top: 70%;
+      left: 15px;
+      position: absolute;
+      width: 275px;
+      height: 275px;
+      opacity: 0.9;
+      background-color: whitesmoke;
+      padding: 10px;
+      display: none;
+    }
 
-	#welcomePanel{
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -65%);
-		width: 40%;
-		padding: 2vh 2vw;
-		font: 16px, sans-Serif;
-		background: gainsboro;
-		box-shadow: 0 0 15px rgba(37,37,37,0.4);
-		border-radius: 35px;
-		text-align: center;
-	}
+    #welcomePanel{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -65%);
+      width: 40%;
+      padding: 2vh 2vw;
+      font: 16px, sans-Serif;
+      background: gainsboro;
+      box-shadow: 0 0 15px rgba(37,37,37,0.4);
+      border-radius: 35px;
+      text-align: center;
+    }
 
-	#click{
-		font-size: 18px;
-	}
+    #click{
+      font-size: 18px;
+    }
 
-	#disclaimer{
-		font-size: 10px;
-	}
+    #disclaimer{
+      font-size: 10px;
+    }
 
-  @media (max-width: 860px) and (orientation: portrait){
-      .controls-panel{
-        position: inherit;
-        top: inherit;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 33%;
-        overflow-y: auto;
-        opacity: 1.0;
+    @media (max-width: 860px) and (orientation: portrait){
+        .controls-panel{
+          position: inherit;
+          top: inherit;
+          right: 0;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 33%;
+          overflow-y: auto;
+          opacity: 1.0;
+        }
+
+      #legendDiv{
+        visibility: hidden;
       }
 
-	  #legendDiv{
-		  visibility: hidden;
-	  }
+      #welcomePanel{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -65%);
+        width: 70%;
+        padding: 2vh 2vw;
+        background-color: gainsboro;
+        box-shadow: 0 0 15px rgba(37,37,37,0.4);
+        border-radius: 35px;
+        text-align: center;
+      }
 
-	  #welcomePanel{
-		  position: fixed;
-		  top: 50%;
-		  left: 50%;
-		  transform: translate(-50%, -65%);
-		  width: 70%;
-		  padding: 2vh 2vw;
-		  background-color: gainsboro;
-		  box-shadow: 0 0 15px rgba(37,37,37,0.4);
-		  border-radius: 35px;
-		  text-align: center;
-	  }
-  }
+      #legendBtn{
+        visibility: hidden;
+      }
+    }
   </style>
 </head>
 
@@ -132,38 +127,86 @@
   <div class="controls-panel">
     <div class="card card-bar-blue custom-card-shadow" id="controlsPanelCard">
       <div class="card-content">
-        <h4>Home to Work</h4>
+        <h4>Origin-Destination Flow Map</h4>
         <div class="font-size--2">
-          Explore where people live and work:
+          People live in:
         </div>
         <div style="display: flex; align-items: flex-end; justify-content: space-between;">
           <select class="" id="sectorSelection" style="height: 2.1rem; width: 49%;">
-            <option value="sector1" selected>Sector 1</option>
-            <option value="sector2">Sector 2</option>
-            <option value="sector3">Sector 3</option>
-            <option value="sector4">Sector 4</option>
-            <option value="sector5">Sector 5</option>
-            <option value="sector6">Sector 6</option>
-            <option value="sector7">Sector 7</option>
-            <option value="sector8">Sector 8</option>
-            <option value="sector9">Sector 9</option>
-            <option value="sector10">Sector 10</option>
-            <option value="sector11">Sector 11</option>
-            <option value="sector12">Sector 12</option>
-            <option value="sector13">Sector 13</option>
-            <option value="sector14">Sector 14</option>
-            <option value="sector15">Sector 15</option>
-            <option value="sector16">Sector 16</option>
-            <option value="sector17">Sector 17</option>
-            <option value="sector18">Sector 18</option>
-            <option value="sector19">Sector 19</option>
-            <option value="sector20">Sector 20</option>
-            <option value="sector21">Sector 21</option>
-            <option value="sector22">Sector 22</option>
-            <option value="sector23">Sector 23</option>
-            <option value="sector24">Sector 24</option>
-            <option value="sector25">Sector 25</option>
+            <option value="sector1Layer" selected>Sector 1</option>
+            <option value="sector2Layer">Sector 2</option>
+            <option value="sector3Layer">Sector 3</option>
+            <option value="sector4Layer">Sector 4</option>
+            <option value="sector5Layer">Sector 5</option>
+            <option value="sector6Layer">Sector 6</option>
+            <option value="sector7Layer">Sector 7</option>
+            <option value="sector8Layer">Sector 8</option>
+            <option value="sector9Layer">Sector 9</option>
+            <option value="sector10Layer">Sector 10</option>
+            <option value="sector11Layer">Sector 11</option>
+            <option value="sector12Layer">Sector 12</option>
+            <option value="sector13Layer">Sector 13</option>
+            <option value="sector14Layer">Sector 14</option>
+            <option value="sector15Layer">Sector 15</option>
+            <option value="sector16Layer">Sector 16</option>
+            <option value="sector17Layer">Sector 17</option>
+            <option value="sector18Layer">Sector 18</option>
+            <option value="sector19Layer">Sector 19</option>
+            <option value="sector20Layer">Sector 20</option>
+            <option value="sector21Layer">Sector 21</option>
+            <option value="sector22Layer">Sector 22</option>
+            <option value="sector23Layer">Sector 23</option>
+            <option value="sector24Layer">Sector 24</option>
+            <option value="sector25Layer">Sector 25</option>
           </select>
+          <button class="btn btn-small btn-clear btn-half" id="homeLayerBtn" style="height: 2.1rem; width: 49%;">
+            <i class="icon-ui-grant icon-ui-white"></i>
+            Show
+          </button>
+        </div>
+        <br/>
+        <div class="font-size--2">
+          People work in:
+        </div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between;">
+          <select class="" id="workSectorSelection" style="height: 2.1rem; width: 49%;">
+            <option value="sector1WorkLayer" selected>Sector 1</option>
+            <option value="sector2WorkLayer">Sector 2</option>
+            <option value="sector3WorkLayer">Sector 3</option>
+            <option value="sector4WorkLayer">Sector 4</option>
+            <option value="sector5WorkLayer">Sector 5</option>
+            <option value="sector6WorkLayer">Sector 6</option>
+            <option value="sector7WorkLayer">Sector 7</option>
+            <option value="sector8WorkLayer">Sector 8</option>
+            <option value="sector9WorkLayer">Sector 9</option>
+            <option value="sector10WorkLayer">Sector 10</option>
+            <option value="sector11WorkLayer">Sector 11</option>
+            <option value="sector12WorkLayer">Sector 12</option>
+            <option value="sector13WorkLayer">Sector 13</option>
+            <option value="sector14WorkLayer">Sector 14</option>
+            <option value="sector15WorkLayer">Sector 15</option>
+            <option value="sector16WorkLayer">Sector 16</option>
+            <option value="sector17WorkLayer">Sector 17</option>
+            <option value="sector18WorkLayer">Sector 18</option>
+            <option value="sector19WorkLayer">Sector 19</option>
+            <option value="sector20WorkLayer">Sector 20</option>
+            <option value="sector21WorkLayer">Sector 21</option>
+            <option value="sector22WorkLayer">Sector 22</option>
+            <option value="sector23WorkLayer">Sector 23</option>
+            <option value="sector24WorkLayer">Sector 24</option>
+            <option value="sector25WorkLayer">Sector 25</option>
+          </select>
+          <button class="btn btn-small btn-clear btn-half" id="layerBtn" style="height: 2.1rem; width: 49%;">
+            <i class="icon-ui-radio-unchecked icon-ui-white"></i>
+            Show
+          </button>
+        </div>
+        <br/>
+        <div class="">
+          <button class="btn btn-small btn-fill btn-half" id="legendBtn">
+            <i class="icon-ui-maps icon-ui-white"></i>
+            Legend
+          </button>
         </div>
       </div>
     </div>
