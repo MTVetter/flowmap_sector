@@ -45,7 +45,7 @@ define([
           type: 'simple',
           symbol: {
             globalCompositeOperation: 'destination-over',
-            radius: 50,
+            radius: 30,
             fillStyle: 'rgba(195, 255, 62, 0)',
             lineWidth: 1,
             strokeStyle: 'rgb(195, 255, 62,0)',
