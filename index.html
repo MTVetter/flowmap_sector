@@ -71,6 +71,16 @@
       text-align: center;
     }
 
+    #alert{
+      top: 50%;
+      left: 50%;
+      display: none;
+      height: 50px;
+      text-align: center;
+      font-weight: bolder;
+      padding-top: 20px;
+    }
+
     #click{
       font-size: 18px;
     }
@@ -196,8 +206,8 @@
             <option value="sector24WorkLayer">Sector 24</option>
             <option value="sector25WorkLayer">Sector 25</option>
           </select>
-          <button class="btn btn-small btn-clear btn-half" id="layerBtn" style="height: 2.1rem; width: 49%;">
-            <i class="icon-ui-radio-unchecked icon-ui-white"></i>
+          <button class="btn btn-small btn-clear btn-half" id="workLayerBtn" style="height: 2.1rem; width: 49%;">
+            <i class="icon-ui-radio-unchecked icon-ui-white" id="workShowButton"></i>
             Show
           </button>
         </div>
@@ -209,9 +219,12 @@
           </button>
         </div>
       </div>
+      <div class="alert-yellow modifier-class" id="alert">
+        Turn on the layer to view the selection
+      </div>
     </div>
   </div>
-  <div id="welcomePanel">
+  <!-- <div id="welcomePanel">
 		<div id="welcome">
 			<h2>Interactive Flow Map</h2>
 			<p>This application displays the amount of people living in one county but are driving to another county for work.
@@ -225,7 +238,7 @@
 			<p id="disclaimer">
 				<b>Note: The blue circles represent the center of the county and not where all the workers work in the county.</b>
 			</p>
-		</div>
+		</div> -->
 	</div>
 
   <!-- load 3rd-party CSV parsing libary  -->
