@@ -123,10 +123,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -204,10 +212,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -285,10 +301,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -366,10 +390,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -447,10 +479,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 10000000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -528,10 +568,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -609,10 +657,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 10000000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -690,10 +746,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -771,10 +835,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -852,10 +924,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 10000000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -933,10 +1013,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1014,10 +1102,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1095,10 +1191,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1176,10 +1280,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1257,10 +1369,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1338,10 +1458,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1419,10 +1547,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1500,10 +1636,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 10000000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1581,10 +1725,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1662,10 +1814,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 10000000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1743,10 +1903,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1824,10 +1992,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1905,10 +2081,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 10000000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -1986,10 +2170,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -2067,10 +2259,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(255,0,0,0.6)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(255,0,0,0.6)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -2148,10 +2348,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -2240,10 +2448,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -2332,10 +2548,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -2424,10 +2648,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -2516,10 +2748,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -2608,10 +2848,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -2700,10 +2948,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -2792,10 +3048,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -2884,10 +3148,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -2976,10 +3248,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -3068,10 +3348,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -3160,10 +3448,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -3252,10 +3548,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -3344,10 +3648,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -3436,10 +3748,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -3528,10 +3848,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -3620,10 +3948,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -3712,10 +4048,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -3804,10 +4148,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -3896,10 +4248,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -3988,10 +4348,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -4080,10 +4448,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -4172,10 +4548,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -4264,10 +4648,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -4356,10 +4748,18 @@ require([
                     }
                 },{
                     classMinValue: 2501,
-                    classMaxValue: 100000,
+                    classMaxValue: 5000,
                     symbol: {
                         strokeStyle: "rgba(87, 216, 255, 0.65)",
                         lineWidth: 8,
+                        lineCap: "round"
+                    }
+                },{
+                    classMinValue: 5001,
+                    classMaxValue: 100000,
+                    symbol: {
+                        strokeStyle: "rgba(87, 216, 255, 0.65)",
+                        lineWidth: 12,
                         lineCap: "round"
                     }
                 }]
@@ -4704,7 +5104,7 @@ require([
                 alertBtn.style.display = "block";
                 setTimeout(function(){
                     alertBtn.style.display = "none";
-                }, 2000);
+                }, 1500);
             } else if (homeShowBtn.className === "icon-ui-grant icon-ui-white" || homeShowBtn.className === "icon-ui-white icon-ui-grant"){
                 toggleActiveLayer(evt);
             }
@@ -4715,7 +5115,7 @@ require([
                 alertBtn.style.display = "block";
                 setTimeout(function() {
                     alertBtn.style.display = "none";
-                }, 2000);
+                }, 1500);
             } else if (workShowBtn.className === "icon-ui-grant icon-ui-white" || workShowBtn.className === "icon-ui-white icon-ui-grant") {
                 toggleActiveWorkLayer(evt);
             }
