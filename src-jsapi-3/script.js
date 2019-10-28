@@ -10,6 +10,9 @@ require([
     "esri/InfoTemplate",
     "esri/dijit/HomeButton",
     "dojo/on",
+    "https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/js/calcite-web.min.js",
+    "dojo/number",
+    "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js",
     "dojo/domReady!"
 ], function(
     CanvasFlowmapLayer,
@@ -22,8 +25,12 @@ require([
     SimpleRenderer,
     InfoTemplate,
     HomeButton,
-    on
+    on,
+    calcite,
+    number,
+    Chart
 ){
+    calcite.init();
     // document.addEventListener("click", function(){
     //     document.getElementById("welcomePanel").style.display = "none";
     // });
@@ -4870,8 +4877,8 @@ require([
                                     wkid: 4326
                                 }
                             },
-                            attributes: datum,
-                            infoTemplate: infoTemplate
+                            attributes: datum
+                            // infoTemplate: infoTemplate
                         });
                     });
     
@@ -4901,8 +4908,8 @@ require([
                                     wkid: 4326
                                 }
                             },
-                            attributes: datum,
-                            infoTemplate: infoTemplate
+                            attributes: datum
+                            // infoTemplate: infoTemplate
                         });
                     });
     
@@ -5192,6 +5199,173 @@ require([
                 }
             }
             
+        });
+
+        //Create a modal as a popup for the destination points to create a graph
+        map.on("click", function(evt){
+            var attr = evt.graphic.attributes;
+
+            if (homeShowBtn.className === "icon-ui-grant icon-ui-white" || homeShowBtn.className === "icon-ui-white icon-ui-grant"){
+                setHomeGraph(attr);
+        
+                calcite.bus.emit("modal:open", {id: "baz"});
+                
+            }
+
+            if (workShowBtn.className === "icon-ui-white icon-ui-grant"){
+                setWorkGraph(attr);
+                calcite.bus.emit("modal:open", {id: "caz"});
+            }
+            
+        });
+
+        //Function to create the home to work graph
+        function setHomeGraph(attr){
+            $("#sectorTitle").text(attr.d_sector);
+            $("#modalContent").text(number.format(attr.h_Workers) + " workers live in " + attr.h_sector + ", but work in " + attr.d_sector + ".");
+            $("#home").append("<canvas id='workersGraph'></canvas>");
+            var canvas = $("#workersGraph");
+
+            var data = {
+                datasets: [
+                    {
+                        data: [attr.Workers2013, attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
+                        backgroundColor: ["#d73347"],
+                        borderColor: "#d73347",
+                        fill: false,
+                        label: "Total Workers",
+                        pointBackgroundColor: "#d73347"
+                    }
+                ],
+                labels: ["2013","2014", "2015", "2017"]
+            };
+    
+            myChart = new Chart(canvas,{
+                type: "line",
+                data: data,
+                options: {
+                    tooltips: {
+                        mode: "index",
+                        intersect: false,
+                        callbacks: {
+                            label: function(tooltipItem, data){
+                                var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                                return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            }
+                        }
+                    },
+                    hover: {
+                        mode: "nearest",
+                        intersect: true
+                    },
+                    scales:{
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: "Year"
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: "Total Workers"
+                            },
+                            ticks: {
+                                callback: function(value){
+                                    return parseFloat(value).toLocaleString();
+                                }
+                            }
+                        }]
+                    }
+                }
+            });
+
+            return canvas;
+        }
+
+        //Create the work to home graph
+        function setWorkGraph(attr){
+            $("#workSectorTitle").text(attr.d_sector);
+            $("#workModalContent").text(number.format(attr.h_Workers) + " workers work in " + attr.h_sector + ", but live in " + attr.d_sector + ".");
+            $("#work").append("<canvas id='workGraph'></canvas>");
+            var canvas = $("#workGraph");
+
+            var data = {
+                datasets: [
+                    {
+                        data: [attr.Workers2013, attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
+                        backgroundColor: ["#d73347"],
+                        borderColor: "#d73347",
+                        fill: false,
+                        label: "Total Workers",
+                        pointBackgroundColor: "#d73347"
+                    }
+                ],
+                labels: ["2013", "2014", "2015", "2017"]
+            };
+    
+            myChart = new Chart(canvas,{
+                type: "line",
+                data: data,
+                options: {
+                    tooltips: {
+                        mode: "index",
+                        intersect: false,
+                        callbacks: {
+                            label: function(tooltipItem, data){
+                                var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                                return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                            }
+                        }
+                    },
+                    hover: {
+                        mode: "nearest",
+                        intersect: true
+                    },
+                    scales:{
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: "Year"
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: "Total Workers"
+                            },
+                            ticks: {
+                                callback: function(value){
+                                    return parseFloat(value).toLocaleString();
+                                }
+                            }
+                        }]
+                    }
+                }
+            });
+
+            return canvas;
+        }
+
+        //Remove the graphs when the modal is closed
+        $("#workClose").on("click", function(){
+            $("#workersGraph").remove();
+        });
+
+        $("#workClose1").on("click", function(){
+            $("#workersGraph").remove();
+        });
+
+        $("#wthClose").on("click", function(){
+            $("#workGraph").remove();
+        });
+
+        $("#wthClose1").on("click", function(){
+            $("#workGraph").remove();
         });
 
     });
