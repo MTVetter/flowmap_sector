@@ -5229,15 +5229,15 @@ require([
             var data = {
                 datasets: [
                     {
-                        data: [attr.Workers2013, attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
-                        backgroundColor: ["#d73347"],
-                        borderColor: "#d73347",
+                        data: [attr.Workers2009, attr.Workers2011, attr.Workers2013, attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
+                        backgroundColor: ["#0079c1"],
+                        borderColor: "#0079c1",
                         fill: false,
                         label: "Total Workers",
-                        pointBackgroundColor: "#d73347"
+                        pointBackgroundColor: "#0079c1"
                     }
                 ],
-                labels: ["2013","2014", "2015", "2017"]
+                labels: ["2009", "2011", "2013","2014", "2015", "2017"]
             };
     
             myChart = new Chart(canvas,{
@@ -5295,15 +5295,15 @@ require([
             var data = {
                 datasets: [
                     {
-                        data: [attr.Workers2013, attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
-                        backgroundColor: ["#d73347"],
-                        borderColor: "#d73347",
+                        data: [attr.Workers2009, attr.Workers2011, attr.Workers2013, attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
+                        backgroundColor: ["#0079c1"],
+                        borderColor: "#0079c1",
                         fill: false,
                         label: "Total Workers",
-                        pointBackgroundColor: "#d73347"
+                        pointBackgroundColor: "#0079c1"
                     }
                 ],
-                labels: ["2013", "2014", "2015", "2017"]
+                labels: ["2009", "2011", "2013", "2014", "2015", "2017"]
             };
     
             myChart = new Chart(canvas,{
