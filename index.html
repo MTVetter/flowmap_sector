@@ -140,10 +140,48 @@
       <div class="card-content">
         <h4>Origin-Destination Flow Map</h4>
         <div class="font-size--2">
-          People living in:
+          Choose a flow:
         </div>
         <div style="display: flex; align-items: flex-end; justify-content: space-between;">
-          <select class="" id="sectorSelection" style="height: 2.1rem; width: 49%;">
+          <select class="" id="flowSelection" style="height: 2.1rem; width: 100%">
+            <option value="homeToWork" selected>Home to Work</option>
+            <option value="workToHome">Work to Home</option>
+          </select>
+        </div>
+        <br/>
+        <div class="font-size--2">
+          Choose a boundary:
+        </div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between;">
+          <select class="" id="boundarySelection" style="height: 2.1rem; width: 100%">
+            <option value="county" selected>County</option>
+            <option value="sector">Regional Sector</option>
+            <option value="censusTract">Census Tracts</option>
+          </select>
+        </div>
+        <br/>
+        <div class="font-size--2">
+          Choose a feature:
+        </div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between;">
+          <select class="" id="countySelection" style="height: 2.1rem; width: 100%;">
+            <option value="Austin">Austin County</option>
+            <option value="Brazoria">Brazoria County</option>
+            <option value="Chambers">Chambers County</option>
+            <option value="Colorado">Colorado County</option>
+            <option value="FortBend">Fort Bend County</option>
+            <option value="Galveston">Galveston County</option>
+            <option value="Harris">Harris County</option>
+            <option value="Liberty">Liberty County</option>
+            <option value="Matagorda">Matagorda County</option>
+            <option value="Montgomery">Montgomery County</option>
+            <option value="Waller">Waller County</option>
+            <option value="Walker">Walker County</option>
+            <option value="Wharton">Wharton County</option>
+          </select>
+        </div>
+        <div style="display: flex; align-items: flex-end; justify-content: space-between;">
+          <select class="" id="sectorSelection" style="height: 2.1rem; width: 100%;">
             <option value="sector1Layer" selected>Sector 1</option>
             <option value="sector2Layer">Sector 2</option>
             <option value="sector3Layer">Sector 3</option>
@@ -170,17 +208,9 @@
             <option value="sector24Layer">Sector 24</option>
             <option value="sector25Layer">Sector 25</option>
           </select>
-          <button class="btn btn-small btn-clear btn-half" id="homeLayerBtn" style="height: 2.1rem; width: 49%;">
-            <i class="icon-ui-grant icon-ui-white" id="homeShowButton"></i>
-            Show
-          </button>
         </div>
-        <br/>
-        <div class="font-size--2">
-          People working in:
-        </div>
-        <div style="display: flex; align-items: flex-end; justify-content: space-between;">
-          <select class="" id="workSectorSelection" style="height: 2.1rem; width: 49%;">
+        <!-- <div style="display: flex; align-items: flex-end; justify-content: space-between;">
+          <select class="" id="workSectorSelection" style="height: 2.1rem; width: 100%;">
             <option value="sector1WorkLayer" selected>Sector 1</option>
             <option value="sector2WorkLayer">Sector 2</option>
             <option value="sector3WorkLayer">Sector 3</option>
@@ -207,11 +237,7 @@
             <option value="sector24WorkLayer">Sector 24</option>
             <option value="sector25WorkLayer">Sector 25</option>
           </select>
-          <button class="btn btn-small btn-clear btn-half" id="workLayerBtn" style="height: 2.1rem; width: 49%;">
-            <i class="icon-ui-radio-unchecked icon-ui-white" id="workShowButton"></i>
-            Show
-          </button>
-        </div>
+        </div> -->
         <br/>
         <div class="">
           <button class="btn btn-small btn-fill btn-half" id="legendBtn">
@@ -236,13 +262,13 @@
       <p id="modalContent"></p>
       <nav class="tab-nav">
         <a class="tab-title is-active js-tab">Home to Work</a>
-        <a class="tab-title js-tab">Age</a>
-        <a class="tab-title js-tab">Demographics</a>
+        <!-- <a class="tab-title js-tab">Age</a>
+        <a class="tab-title js-tab">Demographics</a> -->
       </nav>
       <section class="tab-contents">
         <article class="tab-section js-tab-section is-active" id="home"></article>
-        <article class="tab-section js-tab-section" id="age"></article>
-        <article class="tab-section js-tab-section" id="demographics"></article>
+        <!-- <article class="tab-section js-tab-section" id="age"></article>
+        <article class="tab-section js-tab-section" id="demographics"></article> -->
       </section>
       <br/>
   
@@ -262,13 +288,13 @@
       <p id="workModalContent"></p>
       <nav class="tab-nav">
         <a class="tab-title is-active js-tab">Work to Home</a>
-        <a class="tab-title js-tab">Age</a>
-        <a class="tab-title js-tab">Demographics</a>
+        <!-- <a class="tab-title js-tab">Age</a>
+        <a class="tab-title js-tab">Demographics</a> -->
       </nav>
       <section class="tab-contents">
         <article class="tab-section js-tab-section is-active" id="work"></article>
-        <article class="tab-section js-tab-section" id="workAge"></article>
-        <article class="tab-section js-tab-section" id="workDemographics"></article>
+        <!-- <article class="tab-section js-tab-section" id="workAge"></article>
+        <article class="tab-section js-tab-section" id="workDemographics"></article> -->
       </section>
       <br/>
   
