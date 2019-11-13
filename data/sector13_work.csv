@@ -1,4 +1,4 @@
-﻿h_id,h_sector,h_lat,h_lon,h_Workers,h_Workers2015,h_Workers2014,Workers2013,Workers2011,Workers2009,d_id,d_sector,d_lat,d_lon
+﻿d_id,d_sector,d_lat,d_lon,h_Workers,h_Workers2015,h_Workers2014,Workers2013,Workers2011,Workers2009,h_id,h_sector,h_lat,h_lon
 1,Sector 13,29.8093129,-95.4860029,683,622,754,659,723,885,1,Sector 1,29.1296714,-95.135883
 1,Sector 13,29.8093129,-95.4860029,523,551,538,603,517,516,2,Sector 2,29.2432001,-95.693312
 1,Sector 13,29.8093129,-95.4860029,2067,2120,2205,2186,2171,2679,3,Sector 3,29.4284286,-95.3108234
