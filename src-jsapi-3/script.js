@@ -13,6 +13,8 @@ require([
     "https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.2.5/js/calcite-web.min.js",
     "dojo/number",
     "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js",
+    "esri/symbols/TextSymbol",
+    'esri/layers/LabelClass',
     "dojo/domReady!"
 ], function(
     CanvasFlowmapLayer,
@@ -28,7 +30,9 @@ require([
     on,
     calcite,
     number,
-    Chart
+    Chart,
+    TextSymbol,
+    LabelClass
 ){
     calcite.init();
     // document.addEventListener("click", function(){
@@ -50,7 +54,8 @@ require([
     var map = new Map("map",{
         basemap: "dark-gray-vector",
         center: [-95.381214, 29.742862],
-        zoom: 8
+        zoom: 8,
+        showLabels: true
     });
 
     //Create a home button to return the user to the default map zoom
@@ -66,11 +71,31 @@ require([
         new Color([255,255,255]), 2),new Color([255,255,255,0])
       );
     var renderer = new SimpleRenderer(sfs);
+
     var sectors = new FeatureLayer("https://gis.h-gac.com/arcgis/rest/services/Socioeconomic_Modeling/Sector_25/MapServer/0",{
         opacity: 0.2,
         outFields: ["*"]
     });
+
+    ///////////////////////////////////////
+    //////   Label the sectors      ///////
+    ///////////////////////////////////////
+    var textColor = new Color("#ffffff");
+    var sectorLabel = new TextSymbol().setColor(textColor);
+    sectorLabel.font.setSize("10pt");
+    sectorLabel.font.setFamily("arial");
+    sectorLabel.xoffset = 5;
+    sectorLabel.yoffset = 5;
+
+    var json = {
+        'labelExpressionInfo': {'value': '{Sec_ID}'}
+    };
+
+    var labelClass = new LabelClass(json);
+    labelClass.symbol = sectorLabel;
+
     sectors.setRenderer(renderer);
+    sectors.setLabelingInfo([labelClass]);
 
     map.addLayer(sectors);
 
@@ -2382,7 +2407,7 @@ require([
                     shadowBlur: 2
                 }
             },
-            destinationCircleProperties: {
+            originCircleProperties: {
                 type: "simple",
                 symbol: {
                     globalCompositeOperation: 'destination-over',
@@ -4982,6 +5007,19 @@ require([
             }
         }
 
+        //Add listener to the boundary dropdown
+        $("#boundarySelection").change(function(){
+            var boundarySelection = $("#boundarySelection").val();
+            console.log(boundarySelection);
+            if (boundarySelection === 'county'){
+                $("#sectorSelection").hide();
+                $("#countySelection").show();
+            } else if (boundarySelection === 'sector'){
+                $('#sectorSelection').show();
+                $('#countySelection').hide();
+            }
+        });
+
         //Create function for when the user clicks a button
         function toggleActiveLayer(evt){
 
@@ -5230,11 +5268,11 @@ require([
                 datasets: [
                     {
                         data: [attr.Workers2009, attr.Workers2011, attr.Workers2013, attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
-                        backgroundColor: ["#0079c1"],
-                        borderColor: "#0079c1",
+                        backgroundColor: ["rgba(255, 0, 0, 0.6)"],
+                        borderColor: "rgba(255, 0, 0, 0.6)",
                         fill: false,
                         label: "Total Workers",
-                        pointBackgroundColor: "#0079c1"
+                        pointBackgroundColor: "rgba(255, 0, 0, 0.6)"
                     }
                 ],
                 labels: ["2009", "2011", "2013","2014", "2015", "2017"]
@@ -5288,7 +5326,7 @@ require([
         //Create the work to home graph
         function setWorkGraph(attr){
             $("#workSectorTitle").text(attr.d_sector);
-            $("#workModalContent").text(number.format(attr.h_Workers) + " workers work in " + attr.h_sector + ", but live in " + attr.d_sector + ".");
+            $("#workModalContent").text(number.format(attr.h_Workers) + " workers work in " + attr.d_sector + ", but live in " + attr.h_sector + ".");
             $("#work").append("<canvas id='workGraph'></canvas>");
             var canvas = $("#workGraph");
 
