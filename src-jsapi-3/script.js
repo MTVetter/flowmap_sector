@@ -2,6 +2,8 @@ $(document).ready(function(){
     $("#sectorSelection").hide();
     $('#workSectorSelection').hide();
     $('#countyWorkSelection').hide();
+    $('#ctValueType').hide();
+    $('#ctWorkValueType').hide();
 
     require([
         "Canvas-Flowmap-Layer/CanvasFlowmapLayer",
@@ -20,6 +22,8 @@ $(document).ready(function(){
         "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js",
         "esri/symbols/TextSymbol",
         'esri/layers/LabelClass',
+        'esri/tasks/query',
+        'esri/tasks/QueryTask',
         "dojo/domReady!"
     ], function(
         CanvasFlowmapLayer,
@@ -37,7 +41,9 @@ $(document).ready(function(){
         number,
         Chart,
         TextSymbol,
-        LabelClass
+        LabelClass,
+        Query,
+        QueryTask
     ){
         calcite.init();
         // document.addEventListener("click", function(){
@@ -110,8 +116,54 @@ $(document).ready(function(){
         });
 
         counties.setRenderer(renderer);
+
+        //Add the census tracts boundaries
+        var censusTracts = new FeatureLayer('https://gis.h-gac.com/arcgis/rest/services/Census_ACS/Census_ACS_5Yr_Tracts/MapServer/0',{
+            opacity: 0.2,
+            visible: false
+        });
+
+        censusTracts.setRenderer(renderer);
     
-        map.addLayers([sectors, counties]);
+        map.addLayers([sectors, counties, censusTracts]);
+
+        //Query the census tracts layer
+        var ctValues = [];
+        var ctWorkValues = [];
+        var ctValueSelect = document.getElementById("ctValueType");
+        var ctWorkValueSelect = document.getElementById("ctWorkValueType");
+        var query = new Query();
+        query.returnGeometry = false;
+        query.outFields = ["*"];
+        query.where = "1=1";
+
+        censusTracts.queryFeatures(query, ctFieldValues);
+
+        function ctFieldValues(results) {
+            var features = results.features;
+            var values = features.map(function(feature){
+                return feature.attributes.Tract;
+            });
+            values.forEach(function(item, i){
+                if (
+                    (ctValues.length < 1 || ctValues.indexOf(item) === -1) &&
+                    item !== ""
+                ) {
+                    ctValues.push(item);
+                }
+            });
+            ctValues.sort();
+            ctValues.forEach(function(value){
+                var ctOption = document.createElement("option");
+                var ctOption2 = document.createElement("option");
+                ctOption.text = value;
+                ctOption.id = value+"Layer";
+                ctOption2.text = value;
+                ctOption2.id = value+"WorkLayer"
+                ctValueSelect.add(ctOption);
+                ctWorkValueSelect.add(ctOption2);
+            });
+        }
     
         map.on("load", function(){
             var s1 = new CanvasFlowmapLayer({
@@ -7931,37 +7983,71 @@ $(document).ready(function(){
                     if (bSelection === 'county'){
                         sectors.hide();
                         counties.show();
+                        censusTracts.hide();
                         $('#workSectorSelection').hide();
                         $('#sectorSelection').hide();
                         $('#countySelection').show();
                         $('#countyWorkSelection').hide();
+                        $('#ctWorkValueType').hide();
+                        $('#ctValueType').hide();
                         flowToggle(countSelect);
                     } else if (bSelection === 'sector'){
                         sectors.show();
                         counties.hide();
+                        censusTracts.hide();
                         $('#workSectorSelection').hide();
                         $('#sectorSelection').show();
                         $('#countySelection').hide();
                         $('#countyWorkSelection').hide();
+                        $('#ctValueType').hide();
+                        $('#ctWorkValueType').hide();
+                        flowToggle(secSelect);
+                    } else if (bSelection === 'censusTract'){
+                        sectors.hide();
+                        counties.hide();
+                        censusTracts.show();
+                        $('#workSectorSelection').hide();
+                        $('#sectorSelection').hide();
+                        $('#countySelection').hide();
+                        $('#countyWorkSelection').hide();
+                        $('#ctValueType').show();
+                        $('#ctWorkValueType').hide();
                         flowToggle(secSelect);
                     }
                 } else{
                     if (bSelection === 'county'){
                         sectors.hide();
                         counties.show();
+                        censusTracts.hide();
                         $('#workSectorSelection').hide();
                         $('#sectorSelection').hide();
                         $('#countySelection').hide();
                         $('#countyWorkSelection').show();
+                        $('#ctWorkValueType').hide();
+                        $('#ctValueType').hide();
                         flowToggle(workCountSelect);
                     } else if (bSelection === 'sector'){
                         sectors.show();
                         counties.hide();
+                        censusTracts.hide();
                         $('#workSectorSelection').show();
                         $('#sectorSelection').hide();
                         $('#countySelection').hide();
                         $('#countyWorkSelection').hide();
+                        $('#ctWorkValueType').hide();
+                        $('#ctValueType').hide();
                         flowToggle(workSecSelect);
+                    } else if (bSelection === 'censusTract'){
+                        sectors.hide();
+                        counties.hide();
+                        censusTracts.show();
+                        $('#workSectorSelection').hide();
+                        $('#sectorSelection').hide();
+                        $('#countySelection').hide();
+                        $('#countyWorkSelection').hide();
+                        $('#ctValueType').hide();
+                        $('#ctWorkValueType').show();
+                        flowToggle(secSelect);
                     }
                 }
             });
@@ -7980,6 +8066,8 @@ $(document).ready(function(){
                         $('#sectorSelection').hide();
                         $('#countySelection').show();
                         $('#countyWorkSelection').hide();
+                        $('#ctWorkValueType').hide();
+                        $('#ctValueType').hide();
                         flowToggle(countSelect);
                         sectors.visible = false;
                         counties.visible = true;
@@ -7988,9 +8076,22 @@ $(document).ready(function(){
                         $('#sectorSelection').show();
                         $('#countySelection').hide();
                         $('#countyWorkSelection').hide();
+                        $('#ctWorkValueType').hide();
+                        $('#ctValueType').hide();
                         flowToggle(secSelect);
                         sectors.visible = true;
                         counties.visible = false;
+                    } else if (bSelection === 'censusTract'){
+                        sectors.hide();
+                        counties.hide();
+                        censusTracts.show();
+                        $('#workSectorSelection').hide();
+                        $('#sectorSelection').hide();
+                        $('#countySelection').hide();
+                        $('#countyWorkSelection').hide();
+                        $('#ctValueType').show();
+                        $('#ctWorkValueType').hide();
+                        flowToggle(secSelect);
                     }
                 } else{
                     if (bSelection === 'county'){
@@ -7998,6 +8099,8 @@ $(document).ready(function(){
                         $('#sectorSelection').hide();
                         $('#countySelection').hide();
                         $('#countyWorkSelection').show();
+                        $('#ctValueType').hide();
+                        $('#ctWorkValueType').hide();
                         flowToggle(workCountSelect);
                         sectors.visible = false;
                         counties.visible = true;
@@ -8006,9 +8109,22 @@ $(document).ready(function(){
                         $('#sectorSelection').hide();
                         $('#countySelection').hide();
                         $('#countyWorkSelection').hide();
+                        $('#ctValueType').hide();
+                        $('#ctWorkValueType').hide();
                         flowToggle(workSecSelect);
                         sectors.visible = true;
                         counties.visible = false;
+                    } else if (bSelection === 'censusTract'){
+                        sectors.hide();
+                        counties.hide();
+                        censusTracts.show();
+                        $('#workSectorSelection').hide();
+                        $('#sectorSelection').hide();
+                        $('#countySelection').hide();
+                        $('#countyWorkSelection').hide();
+                        $('#ctValueType').hide();
+                        $('#ctWorkValueType').show();
+                        flowToggle(secSelect);
                     }
                 }
             });
