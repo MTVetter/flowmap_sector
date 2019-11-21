@@ -61,6 +61,7 @@ $(document).ready(function(){
         var flowSelection = document.getElementById("flowSelection");
         var workShowBtn = document.getElementById("workShowButton");
         var homeShowBtn = document.getElementById("homeShowButton");
+        var ctSelect = document.getElementById("ctValueType");
     
         //Create the map
         var map = new Map("map",{
@@ -157,7 +158,7 @@ $(document).ready(function(){
                 var ctOption = document.createElement("option");
                 var ctOption2 = document.createElement("option");
                 ctOption.text = value;
-                ctOption.id = value+"Layer";
+                ctOption.id = value;
                 ctOption2.text = value;
                 ctOption2.id = value+"WorkLayer"
                 ctValueSelect.add(ctOption);
@@ -7765,12 +7766,213 @@ $(document).ready(function(){
                 animationEasingFamily: "Linear",
                 animationEasingType: "None"
             });
+
+            var censusTractsLayer = new CanvasFlowmapLayer({
+                id: "censusTractsLayer",
+                visible: false,
+                originAndDestinationFieldIds: {
+                    originUniqueIdField: "h_id",
+                    originGeometry: {
+                        x: "h_lon",
+                        y: "h_lat",
+                        spatialReference: {
+                            wkid: 4326
+                        }
+                    },
+                    destinationUniqueIdField: "d_id",
+                    destinationGeometry: {
+                        x: "d_lon",
+                        y: "d_lat",
+                        spatialReference: {
+                            wkid: 4326
+                        }
+                    }
+                },
+                pathProperties: {
+                    type: "classBreaks",
+                    field: "h_Workers",
+                    defaultSymbol: {
+                        strokeStyle: "rgba(237, 248, 177, 1)",
+                        lineWidth: 0.5,
+                        lineCap: "round"
+                    },
+                    classBreakInfos: [{
+                        classMinValue: 0,
+                        classMaxValue: 500,
+                        symbol: {
+                            strokeStyle: "rgba(255, 0, 0, 0.6)",
+                            lineWidth: 2,
+                            lineCap: "round"
+                        }
+                    },{
+                        classMinValue: 501,
+                        classMaxValue: 1000,
+                        symbol: {
+                            strokeStyle: "rgba(255, 0, 0, 0.6)",
+                            lineWidth: 4,
+                            lineCap: "round"
+                        }
+                    },{
+                        classMinValue: 1001,
+                        classMaxValue: 2500,
+                        symbol: {
+                            strokeStyle: "rgba(255,0,0,0.6)",
+                            lineWidth: 6,
+                            lineCap: "round"
+                        }
+                    },{
+                        classMinValue: 2501,
+                        classMaxValue: 5000,
+                        symbol: {
+                            strokeStyle: "rgba(255,0,0,0.6)",
+                            lineWidth: 8,
+                            lineCap: "round"
+                        }
+                    },{
+                        classMinValue: 5001,
+                        classMaxValue: 100000,
+                        symbol: {
+                            strokeStyle: "rgba(255,0,0,0.6)",
+                            lineWidth: 12,
+                            lineCap: "round"
+                        }
+                    }]
+                },
+                destinationCircleProperties: {
+                    type: "simple",
+                    symbol: {
+                        globalCompositeOperation: 'destination-over',
+                        radius: 5,
+                        fillStyle: 'rgba(204, 0, 0, 0)',
+                        lineWidth: 0.25,
+                        strokeStyle: 'rgba(204, 0, 0, 0)',
+                        shadowBlur: 0
+                    }
+                },
+                wrapAroundCanvas: true,
+                animationStarted: true,
+                animationDuration: 2000,
+                animationEasingFamily: "Linear",
+                animationEasingType: "None"
+            });
+
+            var workCensusTractsLayer = new CanvasFlowmapLayer({
+                id: "workCensusTractsLayer",
+                visible: false,
+                originAndDestinationFieldIds: {
+                    originUniqueIdField: "h_id",
+                    originGeometry: {
+                        x: "h_lon",
+                        y: "h_lat",
+                        spatialReference: {
+                            wkid: 4326
+                        }
+                    },
+                    destinationUniqueIdField: "d_id",
+                    destinationGeometry: {
+                        x: "d_lon",
+                        y: "d_lat",
+                        spatialReference: {
+                            wkid: 4326
+                        }
+                    }
+                },
+                pathProperties: {
+                    type: "classBreaks",
+                    field: "h_Workers",
+                    defaultSymbol: {
+                        strokeStyle: "rgba(237, 248, 177, 1)",
+                        lineWidth: 0.5,
+                        lineCap: "round"
+                    },
+                    classBreakInfos: [{
+                        classMinValue: 0,
+                        classMaxValue: 500,
+                        symbol: {
+                            strokeStyle: "rgba(87, 216, 255, 0.65)",
+                            lineWidth: 2,
+                            lineCap: "round"
+                        }
+                    },{
+                        classMinValue: 501,
+                        classMaxValue: 1000,
+                        symbol: {
+                            strokeStyle: "rgba(87, 216, 255, 0.65)",
+                            lineWidth: 4,
+                            lineCap: "round"
+                        }
+                    },{
+                        classMinValue: 1001,
+                        classMaxValue: 2500,
+                        symbol: {
+                            strokeStyle: "rgba(87, 216, 255, 0.65)",
+                            lineWidth: 6,
+                            lineCap: "round"
+                        }
+                    },{
+                        classMinValue: 2501,
+                        classMaxValue: 5000,
+                        symbol: {
+                            strokeStyle: "rgba(87, 216, 255, 0.65)",
+                            lineWidth: 8,
+                            lineCap: "round"
+                        }
+                    },{
+                        classMinValue: 5001,
+                        classMaxValue: 100000,
+                        symbol: {
+                            strokeStyle: "rgba(87, 216, 255, 0.65)",
+                            lineWidth: 12,
+                            lineCap: "round"
+                        }
+                    }]
+                },
+                animatePathProperties: {
+                    type: "simple",
+                    symbol: {
+                        strokeStyle: "rgba(0, 63, 81, 0.65)",
+                        lineWidth: 4,
+                        lineDashOffsetSize: 4,
+                        lineCap: "round",
+                        shadowColor: "rgba(0, 63, 81, 0.65)",
+                        shadowBlur: 2
+                    }
+                },
+                originCircleProperties: {
+                    type: "simple",
+                    symbol: {
+                        globalCompositeOperation: 'destination-over',
+                        radius: 4,
+                        fillStyle: 'rgba(17, 142, 170, 0)',
+                        lineWidth: 0.25,
+                        strokeStyle: 'rgba(17, 142, 170, 0)',
+                        shadowBlur: 0
+                    }
+                },
+                destinationCircleProperties: {
+                    type: "simple",
+                    symbol: {
+                        globalCompositeOperation: 'destination-over',
+                        radius: 5,
+                        fillStyle: 'rgba(204, 0, 0, 0)',
+                        lineWidth: 0.25,
+                        strokeStyle: 'rgba(204, 0, 0, 0)',
+                        shadowBlur: 0
+                    }
+                },
+                wrapAroundCanvas: true,
+                animationStarted: true,
+                animationDuration: 2000,
+                animationEasingFamily: "Linear",
+                animationEasingType: "None"
+            });
     
             map.addLayers([s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25,
             workS25, workS24, workS23, workS22, workS21, workS20, workS19, workS18, workS17, workS16, workS15, workS14, workS13, workS12, workS11, workS10, workS9,
             workS8, workS7, workS6, workS5, workS4, workS3, workS2, workS1, austinLayer, brazoriaLayer, chambersLayer, coloradoLayer, fortBendLayer, galvestonLayer,
             harrisLayer, libertyLayer, montgomeryLayer, matagordaLayer, walkerLayer, wallerLayer, whartonLayer, workAustin, workBrazoria, workChambers, workColorado,
-            workFortBend, workGalveston, workHarris, workLiberty, workMatagorda, workMontgomery, workWaller, workWalker, workWaller, workWharton]);
+            workFortBend, workGalveston, workHarris, workLiberty, workMatagorda, workMontgomery, workWaller, workWalker, workWaller, workWharton, censusTractsLayer,
+            workCensusTractsLayer]);
     
             //Call function to populate the layers with graphics
             createGraphicsFromCsv("data/sector1_home.csv", s1);
@@ -7849,6 +8051,8 @@ $(document).ready(function(){
             createGraphicsFromCsv("data/walkerCounty_work.csv", workWalker);
             createGraphicsFromCsv("data/whartonCounty_work.csv", workWharton);
             createGraphicsFromCsv("data/libertyCounty_work.csv", workLiberty);
+            createGraphicsFromCsv("data/ctTest.csv", censusTractsLayer);
+            createGraphicsFromCsv("data/ctTest_Work2.csv", workCensusTractsLayer);
     
             //Use Papa Parse to load and read the CSV data
             function createGraphicsFromCsv(csvFilePath, canvasLayer){
@@ -7979,6 +8183,7 @@ $(document).ready(function(){
                 var workSecSelect = $('#workSectorSelection').val();
                 var countSelect = $('#countySelection').val();
                 var workCountSelect = $('#countyWorkSelection').val();
+                var ctSelect = $('#ctValueType').val();
                 if (fSelection === 'homeToWork'){
                     if (bSelection === 'county'){
                         sectors.hide();
@@ -8012,7 +8217,7 @@ $(document).ready(function(){
                         $('#countyWorkSelection').hide();
                         $('#ctValueType').show();
                         $('#ctWorkValueType').hide();
-                        flowToggle(secSelect);
+                        censusToggle(ctSelect);
                     }
                 } else{
                     if (bSelection === 'county'){
@@ -8047,7 +8252,7 @@ $(document).ready(function(){
                         $('#countyWorkSelection').hide();
                         $('#ctValueType').hide();
                         $('#ctWorkValueType').show();
-                        flowToggle(secSelect);
+                        workCensusToggle(ctSelect);
                     }
                 }
             });
@@ -8060,6 +8265,8 @@ $(document).ready(function(){
                 var workSecSelect = $('#workSectorSelection').val();
                 var countSelect = $('#countySelection').val();
                 var workCountSelect = $('#countyWorkSelection').val();
+                var ctSelect = $('#ctValueType').val();
+                var ctWorkSelect = $('#ctWorkValueType').val();
                 if (fSelection === 'homeToWork'){
                     if (bSelection === 'county'){
                         $('#workSectorSelection').hide();
@@ -8091,7 +8298,7 @@ $(document).ready(function(){
                         $('#countyWorkSelection').hide();
                         $('#ctValueType').show();
                         $('#ctWorkValueType').hide();
-                        flowToggle(secSelect);
+                        censusToggle(ctSelect);
                     }
                 } else{
                     if (bSelection === 'county'){
@@ -8124,7 +8331,7 @@ $(document).ready(function(){
                         $('#countyWorkSelection').hide();
                         $('#ctValueType').hide();
                         $('#ctWorkValueType').show();
-                        flowToggle(secSelect);
+                        workCensusToggle(ctWorkSelect);
                     }
                 }
             });
@@ -8143,6 +8350,20 @@ $(document).ready(function(){
                     map.getLayer(evt).show();
                 }
                 
+            }
+
+            function censusToggle(evt){
+                turnOffActiveLayer();
+                turnOffWorkActiveLayer();
+                censusTractsLayer.show();
+                censusTractsLayer.selectGraphicsForPathDisplayById('h_id', parseInt(evt), true, 'SELECTION_NEW');
+            }
+
+            function workCensusToggle(evt){
+                turnOffActiveLayer();
+                turnOffWorkActiveLayer();
+                workCensusTractsLayer.show();
+                workCensusTractsLayer.selectGraphicsForPathDisplayById('h_id', parseInt(evt), true, 'SELECTION_NEW');
             }
     
             function displayActiveLayer(val){
@@ -8188,6 +8409,7 @@ $(document).ready(function(){
                 wallerLayer.hide();
                 walkerLayer.hide();
                 whartonLayer.hide();
+                censusTractsLayer.hide();
             }
     
             function turnOffWorkActiveLayer(){
@@ -8229,6 +8451,7 @@ $(document).ready(function(){
                 workWalker.hide();
                 workWaller.hide();
                 workWharton.hide();
+                workCensusTractsLayer.hide();
             }
     
             //Selection listeners
@@ -8250,6 +8473,15 @@ $(document).ready(function(){
             workCountySelection.addEventListener('change', function(){
                 var workCountSelect = $('#countyWorkSelection').val();
                 flowToggle(workCountSelect);
+            });
+
+            //Since the census tract values are dynamically created we can't the same format as the other layers
+            $('#ctValueType').on('change', function(){
+                censusToggle($('#ctValueType').val());
+            });
+
+            $('#ctWorkValueType').on('change', function(){
+                workCensusToggle($('#ctWorkValueType').val());
             });
     
             legendBtn.addEventListener("click", function(evt){
