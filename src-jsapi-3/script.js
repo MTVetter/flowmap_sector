@@ -2479,7 +2479,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -2590,7 +2590,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -2701,7 +2701,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -2812,7 +2812,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -2923,7 +2923,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -3034,7 +3034,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -3145,7 +3145,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -3256,7 +3256,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -3367,7 +3367,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -3478,7 +3478,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -3589,7 +3589,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -3700,7 +3700,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -3811,7 +3811,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -3922,7 +3922,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -4033,7 +4033,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -4144,7 +4144,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -4255,7 +4255,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -4366,7 +4366,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -4477,7 +4477,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -4588,7 +4588,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -4699,7 +4699,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -4810,7 +4810,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -4921,7 +4921,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -5032,7 +5032,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -5143,7 +5143,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -6411,7 +6411,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -6522,7 +6522,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -6633,7 +6633,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -6744,7 +6744,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -6855,7 +6855,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -6966,7 +6966,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -7077,7 +7077,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -7188,7 +7188,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -7299,7 +7299,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -7410,7 +7410,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -7521,7 +7521,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -7632,7 +7632,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
@@ -7743,7 +7743,7 @@ $(document).ready(function(){
                     type: "simple",
                     symbol: {
                         globalCompositeOperation: 'destination-over',
-                        radius: 4,
+                        radius: 5,
                         fillStyle: 'rgba(17, 142, 170, 0.7)',
                         lineWidth: 0.25,
                         strokeStyle: 'rgba(17, 142, 170)',
