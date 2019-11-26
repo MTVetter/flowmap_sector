@@ -102,6 +102,10 @@
       font-size: 10px;
     }
 
+    #helpContent{
+      font-size: 14px;
+    }
+
     @media (max-width: 860px) and (orientation: portrait){
         .controls-panel{
           position: inherit;
@@ -196,23 +200,6 @@
           </select>
         </div>
         <div style="display: flex; align-items: flex-end; justify-content: space-between;">
-          <select class="" id="countyWorkSelection" style="height: 2.1rem; width: 100%;">
-            <option value="austinCountyWLayer">Austin County</option>
-            <option value="brazoriaCountyWLayer">Brazoria County</option>
-            <option value="chambersCountyWLayer">Chambers County</option>
-            <option value="coloradoCountyWLayer">Colorado County</option>
-            <option value="fortBendCountyWLayer">Fort Bend County</option>
-            <option value="galvestonCountyWLayer">Galveston County</option>
-            <option value="harrisCountyWLayer">Harris County</option>
-            <option value="libertyCountyWLayer">Liberty County</option>
-            <option value="matagordaCountyWLayer">Matagorda County</option>
-            <option value="montgomeryCountyWLayer">Montgomery County</option>
-            <option value="walkerCountyWLayer">Walker County</option>
-            <option value="wallerCountyWLayer">Waller County</option>
-            <option value="whartonCountyWLayer">Wharton County</option>
-          </select>
-        </div>
-        <div style="display: flex; align-items: flex-end; justify-content: space-between;">
           <select class="" id="sectorSelection" style="height: 2.1rem; width: 100%;">
             <option value="sector1Layer" selected>Sector 1</option>
             <option value="sector2Layer">Sector 2</option>
@@ -239,35 +226,6 @@
             <option value="sector23Layer">Sector 23</option>
             <option value="sector24Layer">Sector 24</option>
             <option value="sector25Layer">Sector 25</option>
-          </select>
-        </div>
-        <div style="display: flex; align-items: flex-end; justify-content: space-between;">
-          <select class="" id="workSectorSelection" style="height: 2.1rem; width: 100%;">
-            <option value="sector1WorkLayer" selected>Sector 1</option>
-            <option value="sector2WorkLayer">Sector 2</option>
-            <option value="sector3WorkLayer">Sector 3</option>
-            <option value="sector4WorkLayer">Sector 4</option>
-            <option value="sector5WorkLayer">Sector 5</option>
-            <option value="sector6WorkLayer">Sector 6</option>
-            <option value="sector7WorkLayer">Sector 7</option>
-            <option value="sector8WorkLayer">Sector 8</option>
-            <option value="sector9WorkLayer">Sector 9</option>
-            <option value="sector10WorkLayer">Sector 10</option>
-            <option value="sector11WorkLayer">Sector 11</option>
-            <option value="sector12WorkLayer">Sector 12</option>
-            <option value="sector13WorkLayer">Sector 13</option>
-            <option value="sector14WorkLayer">Sector 14</option>
-            <option value="sector15WorkLayer">Sector 15</option>
-            <option value="sector16WorkLayer">Sector 16</option>
-            <option value="sector17WorkLayer">Sector 17</option>
-            <option value="sector18WorkLayer">Sector 18</option>
-            <option value="sector19WorkLayer">Sector 19</option>
-            <option value="sector20WorkLayer">Sector 20</option>
-            <option value="sector21WorkLayer">Sector 21</option>
-            <option value="sector22WorkLayer">Sector 22</option>
-            <option value="sector23WorkLayer">Sector 23</option>
-            <option value="sector24WorkLayer">Sector 24</option>
-            <option value="sector25WorkLayer">Sector 25</option>
           </select>
         </div>
         <!-- <div style="display:flex; align-items: flex-end; justify-content: space-between">
@@ -348,8 +306,14 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 32 32" class="svg-icon"><path d="M18.404 16l9.9 9.9-2.404 2.404-9.9-9.9-9.9 9.9L3.696 25.9l9.9-9.9-9.9-9.898L6.1 3.698l9.9 9.899 9.9-9.9 2.404 2.406-9.9 9.898z"/></svg>
       </a>
   
-      <h3 id='helpTitle'></h3>
-      <p id="helpContent"></p>
+      <h3 id='helpTitle'>User Guide</h3>
+      <p id="helpContent">Click the different sets of dropdown menus to change what is displayed on the map. There are two options for Workforce Commute flows: Place of
+        Residence and Place of Work. There are two options for Boundary: Counties and Regional Sectors.
+        <br/><br/>To display a single flow line, move the mouse over a point. For more information about a particular location, click on a point. When you click on
+        a point, a popup window will appear and display the amount of workers that either live or work in the selected feature. A chart
+        is also displayed to show historical trends for the selected feature.
+        <br/><br/>To display all the flow lines, move your cursor to where the lines originate (the location of the flow line without a point).
+      </p>
   
       <div class="text-right">
           <button id="wthClose1" class="btn js-modal-toggle">OK</button>

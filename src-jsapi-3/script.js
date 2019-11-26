@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $("#sectorSelection").hide();
-    $('#workSectorSelection').hide();
-    $('#countyWorkSelection').hide();
+    // $('#workSectorSelection').hide();
+    // $('#countyWorkSelection').hide();
     // $('#ctValueType').hide();
     // $('#ctWorkValueType').hide();
 
@@ -55,7 +55,7 @@ $(document).ready(function(){
         var workSectorSelection = document.getElementById("workSectorSelection");
         var countySelect = document.getElementById("countySelection");
         var workCountySelection = document.getElementById("countyWorkSelection");
-        var legendBtn = document.getElementById("legendBtn");
+        var helpBtn = document.getElementById("helpBtn");
         var legendDiv = document.getElementById("legendDiv");
         var legendDiv2 = document.getElementById("legendDiv2");
         var boundarySelection = document.getElementById("boundarySelection");
@@ -2394,7 +2394,7 @@ $(document).ready(function(){
             });
     
             var workS25 = new CanvasFlowmapLayer({
-                id: "sector25WorkLayer",
+                id: "sector25LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -2505,7 +2505,7 @@ $(document).ready(function(){
             });
     
             var workS24 = new CanvasFlowmapLayer({
-                id: "sector24WorkLayer",
+                id: "sector24LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -2616,7 +2616,7 @@ $(document).ready(function(){
             });
     
             var workS23 = new CanvasFlowmapLayer({
-                id: "sector23WorkLayer",
+                id: "sector23LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -2727,7 +2727,7 @@ $(document).ready(function(){
             });
     
             var workS22 = new CanvasFlowmapLayer({
-                id: "sector22WorkLayer",
+                id: "sector22LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -2838,7 +2838,7 @@ $(document).ready(function(){
             });
     
             var workS21 = new CanvasFlowmapLayer({
-                id: "sector21WorkLayer",
+                id: "sector21LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -2949,7 +2949,7 @@ $(document).ready(function(){
             });
     
             var workS20 = new CanvasFlowmapLayer({
-                id: "sector20WorkLayer",
+                id: "sector20LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -3060,7 +3060,7 @@ $(document).ready(function(){
             });
     
             var workS19 = new CanvasFlowmapLayer({
-                id: "sector19WorkLayer",
+                id: "sector19LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -3171,7 +3171,7 @@ $(document).ready(function(){
             });
     
             var workS18 = new CanvasFlowmapLayer({
-                id: "sector18WorkLayer",
+                id: "sector18LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -3282,7 +3282,7 @@ $(document).ready(function(){
             });
     
             var workS17 = new CanvasFlowmapLayer({
-                id: "sector17WorkLayer",
+                id: "sector17LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -3393,7 +3393,7 @@ $(document).ready(function(){
             });
     
             var workS16 = new CanvasFlowmapLayer({
-                id: "sector16WorkLayer",
+                id: "sector16LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -3504,7 +3504,7 @@ $(document).ready(function(){
             });
     
             var workS15 = new CanvasFlowmapLayer({
-                id: "sector15WorkLayer",
+                id: "sector15LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -3615,7 +3615,7 @@ $(document).ready(function(){
             });
     
             var workS14 = new CanvasFlowmapLayer({
-                id: "sector14WorkLayer",
+                id: "sector14LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -3726,7 +3726,7 @@ $(document).ready(function(){
             });
     
             var workS13 = new CanvasFlowmapLayer({
-                id: "sector13WorkLayer",
+                id: "sector13LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -3837,7 +3837,7 @@ $(document).ready(function(){
             });
     
             var workS12 = new CanvasFlowmapLayer({
-                id: "sector12WorkLayer",
+                id: "sector12LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -3948,7 +3948,7 @@ $(document).ready(function(){
             });
     
             var workS11 = new CanvasFlowmapLayer({
-                id: "sector11WorkLayer",
+                id: "sector11LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -4059,7 +4059,7 @@ $(document).ready(function(){
             });
     
             var workS10 = new CanvasFlowmapLayer({
-                id: "sector10WorkLayer",
+                id: "sector10LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -4170,7 +4170,7 @@ $(document).ready(function(){
             });
     
             var workS9 = new CanvasFlowmapLayer({
-                id: "sector9WorkLayer",
+                id: "sector9LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -4281,7 +4281,7 @@ $(document).ready(function(){
             });
     
             var workS8 = new CanvasFlowmapLayer({
-                id: "sector8WorkLayer",
+                id: "sector8LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -4392,7 +4392,7 @@ $(document).ready(function(){
             });
     
             var workS7 = new CanvasFlowmapLayer({
-                id: "sector7WorkLayer",
+                id: "sector7LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -4503,7 +4503,7 @@ $(document).ready(function(){
             });
     
             var workS6 = new CanvasFlowmapLayer({
-                id: "sector6WorkLayer",
+                id: "sector6LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -4614,7 +4614,7 @@ $(document).ready(function(){
             });
     
             var workS5 = new CanvasFlowmapLayer({
-                id: "sector5WorkLayer",
+                id: "sector5LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -4725,7 +4725,7 @@ $(document).ready(function(){
             });
     
             var workS4 = new CanvasFlowmapLayer({
-                id: "sector4WorkLayer",
+                id: "sector4LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -4836,7 +4836,7 @@ $(document).ready(function(){
             });
     
             var workS3 = new CanvasFlowmapLayer({
-                id: "sector3WorkLayer",
+                id: "sector3LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -4947,7 +4947,7 @@ $(document).ready(function(){
             });
     
             var workS2 = new CanvasFlowmapLayer({
-                id: "sector2WorkLayer",
+                id: "sector2LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -5058,7 +5058,7 @@ $(document).ready(function(){
             });
     
             var workS1 = new CanvasFlowmapLayer({
-                id: "sector1WorkLayer",
+                id: "sector1LayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -6326,7 +6326,7 @@ $(document).ready(function(){
             });
 
             var workAustin = new CanvasFlowmapLayer({
-                id: "austinCountyWLayer",
+                id: "austinCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -6437,7 +6437,7 @@ $(document).ready(function(){
             });
     
             var workBrazoria = new CanvasFlowmapLayer({
-                id: "brazoriaCountyWLayer",
+                id: "brazoriaCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -6548,7 +6548,7 @@ $(document).ready(function(){
             });
     
             var workChambers = new CanvasFlowmapLayer({
-                id: "chambersCountyWLayer",
+                id: "chambersCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -6659,7 +6659,7 @@ $(document).ready(function(){
             });
     
             var workColorado = new CanvasFlowmapLayer({
-                id: "coloradoCountyWLayer",
+                id: "coloradoCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -6770,7 +6770,7 @@ $(document).ready(function(){
             });
     
             var workFortBend = new CanvasFlowmapLayer({
-                id: "fortBendCountyWLayer",
+                id: "fortBendCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -6881,7 +6881,7 @@ $(document).ready(function(){
             });
     
             var workGalveston = new CanvasFlowmapLayer({
-                id: "galvestonCountyWLayer",
+                id: "galvestonCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -6992,7 +6992,7 @@ $(document).ready(function(){
             });
     
             var workHarris = new CanvasFlowmapLayer({
-                id: "harrisCountyWLayer",
+                id: "harrisCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -7103,7 +7103,7 @@ $(document).ready(function(){
             });
     
             var workLiberty = new CanvasFlowmapLayer({
-                id: "libertyCountyWLayer",
+                id: "libertyCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -7214,7 +7214,7 @@ $(document).ready(function(){
             });
     
             var workMatagorda = new CanvasFlowmapLayer({
-                id: "matagordaCountyWLayer",
+                id: "matagordaCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -7325,7 +7325,7 @@ $(document).ready(function(){
             });
     
             var workMontgomery = new CanvasFlowmapLayer({
-                id: "montgomeryCountyWLayer",
+                id: "montgomeryCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -7436,7 +7436,7 @@ $(document).ready(function(){
             });
     
             var workWaller = new CanvasFlowmapLayer({
-                id: "wallerCountyWLayer",
+                id: "wallerCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -7547,7 +7547,7 @@ $(document).ready(function(){
             });
     
             var workWalker = new CanvasFlowmapLayer({
-                id: "walkerCountyWLayer",
+                id: "walkerCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -7658,7 +7658,7 @@ $(document).ready(function(){
             });
     
             var workWharton = new CanvasFlowmapLayer({
-                id: "whartonCountyWLayer",
+                id: "whartonCountyLayerWork",
                 visible: false,
                 originAndDestinationFieldIds: {
                     originUniqueIdField: "h_id",
@@ -8180,19 +8180,19 @@ $(document).ready(function(){
                 var bSelection = $('#boundarySelection').val();
                 var fSelection = $('#flowSelection').val();
                 var secSelect = $('#sectorSelection').val();
-                var workSecSelect = $('#workSectorSelection').val();
+                // var workSecSelect = $('#workSectorSelection').val();
                 var countSelect = $('#countySelection').val();
-                var workCountSelect = $('#countyWorkSelection').val();
+                // var workCountSelect = $('#countyWorkSelection').val();
                 // var ctSelect = $('#ctValueType').val();
                 if (fSelection === 'homeToWork'){
                     if (bSelection === 'county'){
                         sectors.hide();
                         counties.show();
                         // censusTracts.hide();
-                        $('#workSectorSelection').hide();
+                        // $('#workSectorSelection').hide();
                         $('#sectorSelection').hide();
                         $('#countySelection').show();
-                        $('#countyWorkSelection').hide();
+                        // $('#countyWorkSelection').hide();
                         // $('#ctWorkValueType').hide();
                         // $('#ctValueType').hide();
                         flowToggle(countSelect);
@@ -8200,10 +8200,10 @@ $(document).ready(function(){
                         sectors.show();
                         counties.hide();
                         // censusTracts.hide();
-                        $('#workSectorSelection').hide();
+                        // $('#workSectorSelection').hide();
                         $('#sectorSelection').show();
                         $('#countySelection').hide();
-                        $('#countyWorkSelection').hide();
+                        // $('#countyWorkSelection').hide();
                         // $('#ctValueType').hide();
                         // $('#ctWorkValueType').hide();
                         flowToggle(secSelect);
@@ -8225,24 +8225,24 @@ $(document).ready(function(){
                         sectors.hide();
                         counties.show();
                         // censusTracts.hide();
-                        $('#workSectorSelection').hide();
+                        // $('#workSectorSelection').hide();
                         $('#sectorSelection').hide();
-                        $('#countySelection').hide();
-                        $('#countyWorkSelection').show();
+                        $('#countySelection').show();
+                        // $('#countyWorkSelection').show();
                         // $('#ctWorkValueType').hide();
                         // $('#ctValueType').hide();
-                        flowToggle(workCountSelect);
+                        flowWorkToggle(countSelect);
                     } else if (bSelection === 'sector'){
                         sectors.show();
                         counties.hide();
                         // censusTracts.hide();
-                        $('#workSectorSelection').show();
-                        $('#sectorSelection').hide();
+                        // $('#workSectorSelection').show();
+                        $('#sectorSelection').show();
                         $('#countySelection').hide();
-                        $('#countyWorkSelection').hide();
+                        // $('#countyWorkSelection').hide();
                         // $('#ctWorkValueType').hide();
                         // $('#ctValueType').hide();
-                        flowToggle(workSecSelect);
+                        flowWorkToggle(secSelect);
                     }
                     // } else if (bSelection === 'censusTract'){
                     //     sectors.hide();
@@ -8264,29 +8264,29 @@ $(document).ready(function(){
                 var bSelection = $('#boundarySelection').val();
                 var fSelection = $('#flowSelection').val();
                 var secSelect = $('#sectorSelection').val();
-                var workSecSelect = $('#workSectorSelection').val();
+                // var workSecSelect = $('#workSectorSelection').val();
                 var countSelect = $('#countySelection').val();
-                var workCountSelect = $('#countyWorkSelection').val();
+                // var workCountSelect = $('#countyWorkSelection').val();
                 // var ctSelect = $('#ctValueType').val();
                 // var ctWorkSelect = $('#ctWorkValueType').val();
                 if (fSelection === 'homeToWork'){
                     legendDiv.style.display = 'block';
                     legendDiv2.style.display = 'none';                    
                     if (bSelection === 'county'){
-                        $('#workSectorSelection').hide();
+                        // $('#workSectorSelection').hide();
                         $('#sectorSelection').hide();
                         $('#countySelection').show();
-                        $('#countyWorkSelection').hide();
+                        // $('#countyWorkSelection').hide();
                         // $('#ctWorkValueType').hide();
                         // $('#ctValueType').hide();
                         flowToggle(countSelect);
                         sectors.visible = false;
                         counties.visible = true;
                     } else if (bSelection === 'sector'){
-                        $('#workSectorSelection').hide();
+                        // $('#workSectorSelection').hide();
                         $('#sectorSelection').show();
                         $('#countySelection').hide();
-                        $('#countyWorkSelection').hide();
+                        // $('#countyWorkSelection').hide();
                         // $('#ctWorkValueType').hide();
                         // $('#ctValueType').hide();
                         flowToggle(secSelect);
@@ -8309,23 +8309,23 @@ $(document).ready(function(){
                     legendDiv.style.display = 'none';
                     legendDiv2.style.display = 'block';
                     if (bSelection === 'county'){
-                        $('#workSectorSelection').hide();
+                        // $('#workSectorSelection').hide();
                         $('#sectorSelection').hide();
-                        $('#countySelection').hide();
-                        $('#countyWorkSelection').show();
+                        $('#countySelection').show();
+                        // $('#countyWorkSelection').show();
                         // $('#ctValueType').hide();
                         // $('#ctWorkValueType').hide();
-                        flowToggle(workCountSelect);
+                        flowWorkToggle(countSelect);
                         sectors.visible = false;
                         counties.visible = true;
                     } else if (bSelection === 'sector'){
-                        $('#workSectorSelection').show();
-                        $('#sectorSelection').hide();
+                        // $('#workSectorSelection').show();
+                        $('#sectorSelection').show();
                         $('#countySelection').hide();
-                        $('#countyWorkSelection').hide();
+                        // $('#countyWorkSelection').hide();
                         // $('#ctValueType').hide();
                         // $('#ctWorkValueType').hide();
-                        flowToggle(workSecSelect);
+                        flowWorkToggle(secSelect);
                         sectors.visible = true;
                         counties.visible = false;
                     }
@@ -8346,18 +8346,16 @@ $(document).ready(function(){
     
             //Create function for when the user clicks a button
             function flowToggle(evt){
-                if (evt.includes("WorkLayer"||'WLayer')){
-                    turnOffActiveLayer();
-                    turnOffWorkActiveLayer();
-        
-                    map.getLayer(evt).show();
-                } else {
-                    turnOffWorkActiveLayer();
-                    turnOffActiveLayer();
-        
-                    map.getLayer(evt).show();
-                }
-                
+                turnOffActiveLayer();
+                turnOffWorkActiveLayer();
+                map.getLayer(evt).show();                
+            }
+
+            function flowWorkToggle(evt){
+                var name = evt + 'Work';
+                turnOffActiveLayer();
+                turnOffWorkActiveLayer();
+                map.getLayer(name).show();
             }
 
             function censusToggle(evt){
@@ -8461,22 +8459,22 @@ $(document).ready(function(){
             //Selection listeners
             sectorSelect.addEventListener("change", function(evt){
                 var secSelect = $('#sectorSelection').val();
-                flowToggle(secSelect);
-            });
-    
-            workSectorSelection.addEventListener("change", function(evt){
-                var workSecSelect = $('#workSectorSelection').val();
-                flowToggle(workSecSelect);
+                var flowSelect = $('#flowSelection').val();
+                if (flowSelect === 'homeToWork'){
+                    flowToggle(secSelect);
+                } else {
+                    flowWorkToggle(secSelect);
+                }
             });
 
             countySelect.addEventListener('change', function(evt){
                 var countSelect = $('#countySelection').val();
-                flowToggle(countSelect);
-            });
-
-            workCountySelection.addEventListener('change', function(){
-                var workCountSelect = $('#countyWorkSelection').val();
-                flowToggle(workCountSelect);
+                var flowSelect = $('#flowSelection').val();
+                if (flowSelect === 'homeToWork'){
+                    flowToggle(countSelect);
+                } else {
+                    flowWorkToggle(countSelect);
+                }
             });
 
             //Since the census tract values are dynamically created we can't the same format as the other layers
@@ -8488,35 +8486,9 @@ $(document).ready(function(){
             //     workCensusToggle($('#ctWorkValueType').val());
             // });
     
-            // legendBtn.addEventListener("click", function(evt){
-            //     if (evt.target.children.length === 1){
-            //         var iconNode = evt.target.children["0"];
-            //         iconNode.classList.toggle('icon-ui-close');
-            //         iconNode.classList.toggle('icon-ui-maps');
-
-            //         legendDiv.style.display = "none";
-            //         legendDiv2.style.display = "none";
-    
-            //         // if (legendDiv.style.display == "block"){
-            //         //     legendDiv.style.display = "none";
-            //         // } else {
-            //         //     legendDiv.style.display = "block";
-            //         // }
-            //     } else {
-            //         var iconNode = evt.target.classList["1"];
-            //         evt.target.classList.toggle("icon-ui-close");
-            //         evt.target.classList.toggle("icon-ui-maps");
-    
-            //         if ($('#flowSelection').val() === 'homeToWork'){
-            //             legendDiv2.style.display = "none";
-            //             legendDiv.style.display = "block";
-            //         } else {
-            //             legendDiv.style.display = "none";
-            //             legendDiv2.style.display = "block";
-            //         }
-            //     }
-                
-            // });
+            helpBtn.addEventListener("click", function(evt){
+                calcite.bus.emit("modal:open", {id: "help"});                
+            });
     
             //Create a modal as a popup for the destination points to create a graph
             map.on("click", function(evt){
