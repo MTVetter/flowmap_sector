@@ -2,8 +2,8 @@ $(document).ready(function(){
     $("#sectorSelection").hide();
     $('#workSectorSelection').hide();
     $('#countyWorkSelection').hide();
-    $('#ctValueType').hide();
-    $('#ctWorkValueType').hide();
+    // $('#ctValueType').hide();
+    // $('#ctWorkValueType').hide();
 
     require([
         "Canvas-Flowmap-Layer/CanvasFlowmapLayer",
@@ -57,11 +57,12 @@ $(document).ready(function(){
         var workCountySelection = document.getElementById("countyWorkSelection");
         var legendBtn = document.getElementById("legendBtn");
         var legendDiv = document.getElementById("legendDiv");
+        var legendDiv2 = document.getElementById("legendDiv2");
         var boundarySelection = document.getElementById("boundarySelection");
         var flowSelection = document.getElementById("flowSelection");
         var workShowBtn = document.getElementById("workShowButton");
         var homeShowBtn = document.getElementById("homeShowButton");
-        var ctSelect = document.getElementById("ctValueType");
+        // var ctSelect = document.getElementById("ctValueType");
     
         //Create the map
         var map = new Map("map",{
@@ -119,52 +120,52 @@ $(document).ready(function(){
         counties.setRenderer(renderer);
 
         //Add the census tracts boundaries
-        var censusTracts = new FeatureLayer('https://gis.h-gac.com/arcgis/rest/services/Census_ACS/Census_ACS_5Yr_Tracts/MapServer/0',{
-            opacity: 0.2,
-            visible: false
-        });
+        // var censusTracts = new FeatureLayer('https://gis.h-gac.com/arcgis/rest/services/Census_ACS/Census_ACS_5Yr_Tracts/MapServer/0',{
+        //     opacity: 0.2,
+        //     visible: false
+        // });
 
-        censusTracts.setRenderer(renderer);
+        // censusTracts.setRenderer(renderer);
     
-        map.addLayers([sectors, counties, censusTracts]);
+        map.addLayers([sectors, counties]);
 
         //Query the census tracts layer
-        var ctValues = [];
-        var ctWorkValues = [];
-        var ctValueSelect = document.getElementById("ctValueType");
-        var ctWorkValueSelect = document.getElementById("ctWorkValueType");
-        var query = new Query();
-        query.returnGeometry = false;
-        query.outFields = ["*"];
-        query.where = "1=1";
+        // var ctValues = [];
+        // var ctWorkValues = [];
+        // var ctValueSelect = document.getElementById("ctValueType");
+        // var ctWorkValueSelect = document.getElementById("ctWorkValueType");
+        // var query = new Query();
+        // query.returnGeometry = false;
+        // query.outFields = ["*"];
+        // query.where = "1=1";
 
-        censusTracts.queryFeatures(query, ctFieldValues);
+        // censusTracts.queryFeatures(query, ctFieldValues);
 
-        function ctFieldValues(results) {
-            var features = results.features;
-            var values = features.map(function(feature){
-                return feature.attributes.Tract;
-            });
-            values.forEach(function(item, i){
-                if (
-                    (ctValues.length < 1 || ctValues.indexOf(item) === -1) &&
-                    item !== ""
-                ) {
-                    ctValues.push(item);
-                }
-            });
-            ctValues.sort();
-            ctValues.forEach(function(value){
-                var ctOption = document.createElement("option");
-                var ctOption2 = document.createElement("option");
-                ctOption.text = value;
-                ctOption.id = value;
-                ctOption2.text = value;
-                ctOption2.id = value+"WorkLayer"
-                ctValueSelect.add(ctOption);
-                ctWorkValueSelect.add(ctOption2);
-            });
-        }
+        // function ctFieldValues(results) {
+        //     var features = results.features;
+        //     var values = features.map(function(feature){
+        //         return feature.attributes.Tract;
+        //     });
+        //     values.forEach(function(item, i){
+        //         if (
+        //             (ctValues.length < 1 || ctValues.indexOf(item) === -1) &&
+        //             item !== ""
+        //         ) {
+        //             ctValues.push(item);
+        //         }
+        //     });
+        //     ctValues.sort();
+        //     ctValues.forEach(function(value){
+        //         var ctOption = document.createElement("option");
+        //         var ctOption2 = document.createElement("option");
+        //         ctOption.text = value;
+        //         ctOption.id = value;
+        //         ctOption2.text = value;
+        //         ctOption2.id = value+"WorkLayer"
+        //         ctValueSelect.add(ctOption);
+        //         ctWorkValueSelect.add(ctOption2);
+        //     });
+        // }
     
         map.on("load", function(){
             var s1 = new CanvasFlowmapLayer({
@@ -5586,7 +5587,7 @@ $(document).ready(function(){
                         }
                     },{
                         classMinValue: 5001,
-                        classMaxValue: 100000,
+                        classMaxValue: 10000000,
                         symbol: {
                             strokeStyle: "rgba(255,0,0,0.6)",
                             lineWidth: 12,
@@ -6031,7 +6032,7 @@ $(document).ready(function(){
                         }
                     },{
                         classMinValue: 5001,
-                        classMaxValue: 100000,
+                        classMaxValue: 10000000,
                         symbol: {
                             strokeStyle: "rgba(255,0,0,0.6)",
                             lineWidth: 12,
@@ -7053,7 +7054,7 @@ $(document).ready(function(){
                         }
                     },{
                         classMinValue: 5001,
-                        classMaxValue: 100000,
+                        classMaxValue: 1000000,
                         symbol: {
                             strokeStyle: "rgba(87, 216, 255, 0.65)",
                             lineWidth: 12,
@@ -7767,212 +7768,211 @@ $(document).ready(function(){
                 animationEasingType: "None"
             });
 
-            var censusTractsLayer = new CanvasFlowmapLayer({
-                id: "censusTractsLayer",
-                visible: false,
-                originAndDestinationFieldIds: {
-                    originUniqueIdField: "h_id",
-                    originGeometry: {
-                        x: "h_lon",
-                        y: "h_lat",
-                        spatialReference: {
-                            wkid: 4326
-                        }
-                    },
-                    destinationUniqueIdField: "d_id",
-                    destinationGeometry: {
-                        x: "d_lon",
-                        y: "d_lat",
-                        spatialReference: {
-                            wkid: 4326
-                        }
-                    }
-                },
-                pathProperties: {
-                    type: "classBreaks",
-                    field: "h_Workers",
-                    defaultSymbol: {
-                        strokeStyle: "rgba(237, 248, 177, 1)",
-                        lineWidth: 0.5,
-                        lineCap: "round"
-                    },
-                    classBreakInfos: [{
-                        classMinValue: 0,
-                        classMaxValue: 500,
-                        symbol: {
-                            strokeStyle: "rgba(255, 0, 0, 0.6)",
-                            lineWidth: 2,
-                            lineCap: "round"
-                        }
-                    },{
-                        classMinValue: 501,
-                        classMaxValue: 1000,
-                        symbol: {
-                            strokeStyle: "rgba(255, 0, 0, 0.6)",
-                            lineWidth: 4,
-                            lineCap: "round"
-                        }
-                    },{
-                        classMinValue: 1001,
-                        classMaxValue: 2500,
-                        symbol: {
-                            strokeStyle: "rgba(255,0,0,0.6)",
-                            lineWidth: 6,
-                            lineCap: "round"
-                        }
-                    },{
-                        classMinValue: 2501,
-                        classMaxValue: 5000,
-                        symbol: {
-                            strokeStyle: "rgba(255,0,0,0.6)",
-                            lineWidth: 8,
-                            lineCap: "round"
-                        }
-                    },{
-                        classMinValue: 5001,
-                        classMaxValue: 100000,
-                        symbol: {
-                            strokeStyle: "rgba(255,0,0,0.6)",
-                            lineWidth: 12,
-                            lineCap: "round"
-                        }
-                    }]
-                },
-                destinationCircleProperties: {
-                    type: "simple",
-                    symbol: {
-                        globalCompositeOperation: 'destination-over',
-                        radius: 5,
-                        fillStyle: 'rgba(204, 0, 0, 0)',
-                        lineWidth: 0.25,
-                        strokeStyle: 'rgba(204, 0, 0, 0)',
-                        shadowBlur: 0
-                    }
-                },
-                wrapAroundCanvas: true,
-                animationStarted: true,
-                animationDuration: 2000,
-                animationEasingFamily: "Linear",
-                animationEasingType: "None"
-            });
+            // var censusTractsLayer = new CanvasFlowmapLayer({
+            //     id: "censusTractsLayer",
+            //     visible: false,
+            //     originAndDestinationFieldIds: {
+            //         originUniqueIdField: "h_id",
+            //         originGeometry: {
+            //             x: "h_lon",
+            //             y: "h_lat",
+            //             spatialReference: {
+            //                 wkid: 4326
+            //             }
+            //         },
+            //         destinationUniqueIdField: "d_id",
+            //         destinationGeometry: {
+            //             x: "d_lon",
+            //             y: "d_lat",
+            //             spatialReference: {
+            //                 wkid: 4326
+            //             }
+            //         }
+            //     },
+            //     pathProperties: {
+            //         type: "classBreaks",
+            //         field: "h_Workers",
+            //         defaultSymbol: {
+            //             strokeStyle: "rgba(237, 248, 177, 1)",
+            //             lineWidth: 0.5,
+            //             lineCap: "round"
+            //         },
+            //         classBreakInfos: [{
+            //             classMinValue: 0,
+            //             classMaxValue: 500,
+            //             symbol: {
+            //                 strokeStyle: "rgba(255, 0, 0, 0.6)",
+            //                 lineWidth: 2,
+            //                 lineCap: "round"
+            //             }
+            //         },{
+            //             classMinValue: 501,
+            //             classMaxValue: 1000,
+            //             symbol: {
+            //                 strokeStyle: "rgba(255, 0, 0, 0.6)",
+            //                 lineWidth: 4,
+            //                 lineCap: "round"
+            //             }
+            //         },{
+            //             classMinValue: 1001,
+            //             classMaxValue: 2500,
+            //             symbol: {
+            //                 strokeStyle: "rgba(255,0,0,0.6)",
+            //                 lineWidth: 6,
+            //                 lineCap: "round"
+            //             }
+            //         },{
+            //             classMinValue: 2501,
+            //             classMaxValue: 5000,
+            //             symbol: {
+            //                 strokeStyle: "rgba(255,0,0,0.6)",
+            //                 lineWidth: 8,
+            //                 lineCap: "round"
+            //             }
+            //         },{
+            //             classMinValue: 5001,
+            //             classMaxValue: 100000,
+            //             symbol: {
+            //                 strokeStyle: "rgba(255,0,0,0.6)",
+            //                 lineWidth: 12,
+            //                 lineCap: "round"
+            //             }
+            //         }]
+            //     },
+            //     destinationCircleProperties: {
+            //         type: "simple",
+            //         symbol: {
+            //             globalCompositeOperation: 'destination-over',
+            //             radius: 5,
+            //             fillStyle: 'rgba(204, 0, 0, 0)',
+            //             lineWidth: 0.25,
+            //             strokeStyle: 'rgba(204, 0, 0, 0)',
+            //             shadowBlur: 0
+            //         }
+            //     },
+            //     wrapAroundCanvas: true,
+            //     animationStarted: true,
+            //     animationDuration: 2000,
+            //     animationEasingFamily: "Linear",
+            //     animationEasingType: "None"
+            // });
 
-            var workCensusTractsLayer = new CanvasFlowmapLayer({
-                id: "workCensusTractsLayer",
-                visible: false,
-                originAndDestinationFieldIds: {
-                    originUniqueIdField: "h_id",
-                    originGeometry: {
-                        x: "h_lon",
-                        y: "h_lat",
-                        spatialReference: {
-                            wkid: 4326
-                        }
-                    },
-                    destinationUniqueIdField: "d_id",
-                    destinationGeometry: {
-                        x: "d_lon",
-                        y: "d_lat",
-                        spatialReference: {
-                            wkid: 4326
-                        }
-                    }
-                },
-                pathProperties: {
-                    type: "classBreaks",
-                    field: "h_Workers",
-                    defaultSymbol: {
-                        strokeStyle: "rgba(237, 248, 177, 1)",
-                        lineWidth: 0.5,
-                        lineCap: "round"
-                    },
-                    classBreakInfos: [{
-                        classMinValue: 0,
-                        classMaxValue: 500,
-                        symbol: {
-                            strokeStyle: "rgba(87, 216, 255, 0.65)",
-                            lineWidth: 2,
-                            lineCap: "round"
-                        }
-                    },{
-                        classMinValue: 501,
-                        classMaxValue: 1000,
-                        symbol: {
-                            strokeStyle: "rgba(87, 216, 255, 0.65)",
-                            lineWidth: 4,
-                            lineCap: "round"
-                        }
-                    },{
-                        classMinValue: 1001,
-                        classMaxValue: 2500,
-                        symbol: {
-                            strokeStyle: "rgba(87, 216, 255, 0.65)",
-                            lineWidth: 6,
-                            lineCap: "round"
-                        }
-                    },{
-                        classMinValue: 2501,
-                        classMaxValue: 5000,
-                        symbol: {
-                            strokeStyle: "rgba(87, 216, 255, 0.65)",
-                            lineWidth: 8,
-                            lineCap: "round"
-                        }
-                    },{
-                        classMinValue: 5001,
-                        classMaxValue: 100000,
-                        symbol: {
-                            strokeStyle: "rgba(87, 216, 255, 0.65)",
-                            lineWidth: 12,
-                            lineCap: "round"
-                        }
-                    }]
-                },
-                animatePathProperties: {
-                    type: "simple",
-                    symbol: {
-                        strokeStyle: "rgba(0, 63, 81, 0.65)",
-                        lineWidth: 4,
-                        lineDashOffsetSize: 4,
-                        lineCap: "round",
-                        shadowColor: "rgba(0, 63, 81, 0.65)",
-                        shadowBlur: 2
-                    }
-                },
-                originCircleProperties: {
-                    type: "simple",
-                    symbol: {
-                        globalCompositeOperation: 'destination-over',
-                        radius: 4,
-                        fillStyle: 'rgba(17, 142, 170, 0)',
-                        lineWidth: 0.25,
-                        strokeStyle: 'rgba(17, 142, 170, 0)',
-                        shadowBlur: 0
-                    }
-                },
-                destinationCircleProperties: {
-                    type: "simple",
-                    symbol: {
-                        globalCompositeOperation: 'destination-over',
-                        radius: 5,
-                        fillStyle: 'rgba(204, 0, 0, 0)',
-                        lineWidth: 0.25,
-                        strokeStyle: 'rgba(204, 0, 0, 0)',
-                        shadowBlur: 0
-                    }
-                },
-                wrapAroundCanvas: true,
-                animationStarted: true,
-                animationDuration: 2000,
-                animationEasingFamily: "Linear",
-                animationEasingType: "None"
-            });
+            // var workCensusTractsLayer = new CanvasFlowmapLayer({
+            //     id: "workCensusTractsLayer",
+            //     visible: false,
+            //     originAndDestinationFieldIds: {
+            //         originUniqueIdField: "h_id",
+            //         originGeometry: {
+            //             x: "h_lon",
+            //             y: "h_lat",
+            //             spatialReference: {
+            //                 wkid: 4326
+            //             }
+            //         },
+            //         destinationUniqueIdField: "d_id",
+            //         destinationGeometry: {
+            //             x: "d_lon",
+            //             y: "d_lat",
+            //             spatialReference: {
+            //                 wkid: 4326
+            //             }
+            //         }
+            //     },
+            //     pathProperties: {
+            //         type: "classBreaks",
+            //         field: "h_Workers",
+            //         defaultSymbol: {
+            //             strokeStyle: "rgba(237, 248, 177, 1)",
+            //             lineWidth: 0.5,
+            //             lineCap: "round"
+            //         },
+            //         classBreakInfos: [{
+            //             classMinValue: 0,
+            //             classMaxValue: 500,
+            //             symbol: {
+            //                 strokeStyle: "rgba(87, 216, 255, 0.65)",
+            //                 lineWidth: 2,
+            //                 lineCap: "round"
+            //             }
+            //         },{
+            //             classMinValue: 501,
+            //             classMaxValue: 1000,
+            //             symbol: {
+            //                 strokeStyle: "rgba(87, 216, 255, 0.65)",
+            //                 lineWidth: 4,
+            //                 lineCap: "round"
+            //             }
+            //         },{
+            //             classMinValue: 1001,
+            //             classMaxValue: 2500,
+            //             symbol: {
+            //                 strokeStyle: "rgba(87, 216, 255, 0.65)",
+            //                 lineWidth: 6,
+            //                 lineCap: "round"
+            //             }
+            //         },{
+            //             classMinValue: 2501,
+            //             classMaxValue: 5000,
+            //             symbol: {
+            //                 strokeStyle: "rgba(87, 216, 255, 0.65)",
+            //                 lineWidth: 8,
+            //                 lineCap: "round"
+            //             }
+            //         },{
+            //             classMinValue: 5001,
+            //             classMaxValue: 100000,
+            //             symbol: {
+            //                 strokeStyle: "rgba(87, 216, 255, 0.65)",
+            //                 lineWidth: 12,
+            //                 lineCap: "round"
+            //             }
+            //         }]
+            //     },
+            //     animatePathProperties: {
+            //         type: "simple",
+            //         symbol: {
+            //             strokeStyle: "rgba(0, 63, 81, 0.65)",
+            //             lineWidth: 4,
+            //             lineDashOffsetSize: 4,
+            //             lineCap: "round",
+            //             shadowColor: "rgba(0, 63, 81, 0.65)",
+            //             shadowBlur: 2
+            //         }
+            //     },
+            //     originCircleProperties: {
+            //         type: "simple",
+            //         symbol: {
+            //             globalCompositeOperation: 'destination-over',
+            //             radius: 4,
+            //             fillStyle: 'rgba(17, 142, 170, 0)',
+            //             lineWidth: 0.25,
+            //             strokeStyle: 'rgba(17, 142, 170, 0)',
+            //             shadowBlur: 0
+            //         }
+            //     },
+            //     destinationCircleProperties: {
+            //         type: "simple",
+            //         symbol: {
+            //             globalCompositeOperation: 'destination-over',
+            //             radius: 5,
+            //             fillStyle: 'rgba(204, 0, 0, 0)',
+            //             lineWidth: 0.25,
+            //             strokeStyle: 'rgba(204, 0, 0, 0)',
+            //             shadowBlur: 0
+            //         }
+            //     },
+            //     wrapAroundCanvas: true,
+            //     animationStarted: true,
+            //     animationDuration: 2000,
+            //     animationEasingFamily: "Linear",
+            //     animationEasingType: "None"
+            // });
     
             map.addLayers([s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15, s16, s17, s18, s19, s20, s21, s22, s23, s24, s25,
             workS25, workS24, workS23, workS22, workS21, workS20, workS19, workS18, workS17, workS16, workS15, workS14, workS13, workS12, workS11, workS10, workS9,
             workS8, workS7, workS6, workS5, workS4, workS3, workS2, workS1, austinLayer, brazoriaLayer, chambersLayer, coloradoLayer, fortBendLayer, galvestonLayer,
             harrisLayer, libertyLayer, montgomeryLayer, matagordaLayer, walkerLayer, wallerLayer, whartonLayer, workAustin, workBrazoria, workChambers, workColorado,
-            workFortBend, workGalveston, workHarris, workLiberty, workMatagorda, workMontgomery, workWaller, workWalker, workWaller, workWharton, censusTractsLayer,
-            workCensusTractsLayer]);
+            workFortBend, workGalveston, workHarris, workLiberty, workMatagorda, workMontgomery, workWaller, workWalker, workWaller, workWharton]);
     
             //Call function to populate the layers with graphics
             createGraphicsFromCsv("data/sector1_home.csv", s1);
@@ -8051,8 +8051,8 @@ $(document).ready(function(){
             createGraphicsFromCsv("data/walkerCounty_work.csv", workWalker);
             createGraphicsFromCsv("data/whartonCounty_work.csv", workWharton);
             createGraphicsFromCsv("data/libertyCounty_work.csv", workLiberty);
-            createGraphicsFromCsv("data/ctTest.csv", censusTractsLayer);
-            createGraphicsFromCsv("data/ctTest_Work2.csv", workCensusTractsLayer);
+            // createGraphicsFromCsv("data/ctTest.csv", censusTractsLayer);
+            // createGraphicsFromCsv("data/updatedCT_Work.csv", workCensusTractsLayer);
     
             //Use Papa Parse to load and read the CSV data
             function createGraphicsFromCsv(csvFilePath, canvasLayer){
@@ -8183,77 +8183,79 @@ $(document).ready(function(){
                 var workSecSelect = $('#workSectorSelection').val();
                 var countSelect = $('#countySelection').val();
                 var workCountSelect = $('#countyWorkSelection').val();
-                var ctSelect = $('#ctValueType').val();
+                // var ctSelect = $('#ctValueType').val();
                 if (fSelection === 'homeToWork'){
                     if (bSelection === 'county'){
                         sectors.hide();
                         counties.show();
-                        censusTracts.hide();
+                        // censusTracts.hide();
                         $('#workSectorSelection').hide();
                         $('#sectorSelection').hide();
                         $('#countySelection').show();
                         $('#countyWorkSelection').hide();
-                        $('#ctWorkValueType').hide();
-                        $('#ctValueType').hide();
+                        // $('#ctWorkValueType').hide();
+                        // $('#ctValueType').hide();
                         flowToggle(countSelect);
                     } else if (bSelection === 'sector'){
                         sectors.show();
                         counties.hide();
-                        censusTracts.hide();
+                        // censusTracts.hide();
                         $('#workSectorSelection').hide();
                         $('#sectorSelection').show();
                         $('#countySelection').hide();
                         $('#countyWorkSelection').hide();
-                        $('#ctValueType').hide();
-                        $('#ctWorkValueType').hide();
+                        // $('#ctValueType').hide();
+                        // $('#ctWorkValueType').hide();
                         flowToggle(secSelect);
-                    } else if (bSelection === 'censusTract'){
-                        sectors.hide();
-                        counties.hide();
-                        censusTracts.show();
-                        $('#workSectorSelection').hide();
-                        $('#sectorSelection').hide();
-                        $('#countySelection').hide();
-                        $('#countyWorkSelection').hide();
-                        $('#ctValueType').show();
-                        $('#ctWorkValueType').hide();
-                        censusToggle(ctSelect);
                     }
+                    // } else if (bSelection === 'censusTract'){
+                    //     sectors.hide();
+                    //     counties.hide();
+                    //     censusTracts.show();
+                    //     $('#workSectorSelection').hide();
+                    //     $('#sectorSelection').hide();
+                    //     $('#countySelection').hide();
+                    //     $('#countyWorkSelection').hide();
+                    //     $('#ctValueType').show();
+                    //     $('#ctWorkValueType').hide();
+                    //     censusToggle(ctSelect);
+                    // }
                 } else{
                     if (bSelection === 'county'){
                         sectors.hide();
                         counties.show();
-                        censusTracts.hide();
+                        // censusTracts.hide();
                         $('#workSectorSelection').hide();
                         $('#sectorSelection').hide();
                         $('#countySelection').hide();
                         $('#countyWorkSelection').show();
-                        $('#ctWorkValueType').hide();
-                        $('#ctValueType').hide();
+                        // $('#ctWorkValueType').hide();
+                        // $('#ctValueType').hide();
                         flowToggle(workCountSelect);
                     } else if (bSelection === 'sector'){
                         sectors.show();
                         counties.hide();
-                        censusTracts.hide();
+                        // censusTracts.hide();
                         $('#workSectorSelection').show();
                         $('#sectorSelection').hide();
                         $('#countySelection').hide();
                         $('#countyWorkSelection').hide();
-                        $('#ctWorkValueType').hide();
-                        $('#ctValueType').hide();
+                        // $('#ctWorkValueType').hide();
+                        // $('#ctValueType').hide();
                         flowToggle(workSecSelect);
-                    } else if (bSelection === 'censusTract'){
-                        sectors.hide();
-                        counties.hide();
-                        censusTracts.show();
-                        $('#workSectorSelection').hide();
-                        $('#sectorSelection').hide();
-                        $('#countySelection').hide();
-                        $('#countyWorkSelection').hide();
-                        $('#ctValueType').hide();
-                        $('#ctWorkValueType').show();
-                        workCensusToggle(ctSelect);
                     }
+                    // } else if (bSelection === 'censusTract'){
+                    //     sectors.hide();
+                    //     counties.hide();
+                    //     censusTracts.show();
+                    //     $('#workSectorSelection').hide();
+                    //     $('#sectorSelection').hide();
+                    //     $('#countySelection').hide();
+                    //     $('#countyWorkSelection').hide();
+                    //     $('#ctValueType').hide();
+                    //     $('#ctWorkValueType').show();
+                    //     workCensusToggle(ctSelect);
+                    // }
                 }
             });
 
@@ -8265,16 +8267,18 @@ $(document).ready(function(){
                 var workSecSelect = $('#workSectorSelection').val();
                 var countSelect = $('#countySelection').val();
                 var workCountSelect = $('#countyWorkSelection').val();
-                var ctSelect = $('#ctValueType').val();
-                var ctWorkSelect = $('#ctWorkValueType').val();
+                // var ctSelect = $('#ctValueType').val();
+                // var ctWorkSelect = $('#ctWorkValueType').val();
                 if (fSelection === 'homeToWork'){
+                    legendDiv.style.display = 'block';
+                    legendDiv2.style.display = 'none';                    
                     if (bSelection === 'county'){
                         $('#workSectorSelection').hide();
                         $('#sectorSelection').hide();
                         $('#countySelection').show();
                         $('#countyWorkSelection').hide();
-                        $('#ctWorkValueType').hide();
-                        $('#ctValueType').hide();
+                        // $('#ctWorkValueType').hide();
+                        // $('#ctValueType').hide();
                         flowToggle(countSelect);
                         sectors.visible = false;
                         counties.visible = true;
@@ -8283,31 +8287,34 @@ $(document).ready(function(){
                         $('#sectorSelection').show();
                         $('#countySelection').hide();
                         $('#countyWorkSelection').hide();
-                        $('#ctWorkValueType').hide();
-                        $('#ctValueType').hide();
+                        // $('#ctWorkValueType').hide();
+                        // $('#ctValueType').hide();
                         flowToggle(secSelect);
                         sectors.visible = true;
                         counties.visible = false;
-                    } else if (bSelection === 'censusTract'){
-                        sectors.hide();
-                        counties.hide();
-                        censusTracts.show();
-                        $('#workSectorSelection').hide();
-                        $('#sectorSelection').hide();
-                        $('#countySelection').hide();
-                        $('#countyWorkSelection').hide();
-                        $('#ctValueType').show();
-                        $('#ctWorkValueType').hide();
-                        censusToggle(ctSelect);
                     }
+                    // } else if (bSelection === 'censusTract'){
+                    //     sectors.hide();
+                    //     counties.hide();
+                    //     censusTracts.show();
+                    //     $('#workSectorSelection').hide();
+                    //     $('#sectorSelection').hide();
+                    //     $('#countySelection').hide();
+                    //     $('#countyWorkSelection').hide();
+                    //     $('#ctValueType').show();
+                    //     $('#ctWorkValueType').hide();
+                    //     censusToggle(ctSelect);
+                    // }
                 } else{
+                    legendDiv.style.display = 'none';
+                    legendDiv2.style.display = 'block';
                     if (bSelection === 'county'){
                         $('#workSectorSelection').hide();
                         $('#sectorSelection').hide();
                         $('#countySelection').hide();
                         $('#countyWorkSelection').show();
-                        $('#ctValueType').hide();
-                        $('#ctWorkValueType').hide();
+                        // $('#ctValueType').hide();
+                        // $('#ctWorkValueType').hide();
                         flowToggle(workCountSelect);
                         sectors.visible = false;
                         counties.visible = true;
@@ -8316,23 +8323,24 @@ $(document).ready(function(){
                         $('#sectorSelection').hide();
                         $('#countySelection').hide();
                         $('#countyWorkSelection').hide();
-                        $('#ctValueType').hide();
-                        $('#ctWorkValueType').hide();
+                        // $('#ctValueType').hide();
+                        // $('#ctWorkValueType').hide();
                         flowToggle(workSecSelect);
                         sectors.visible = true;
                         counties.visible = false;
-                    } else if (bSelection === 'censusTract'){
-                        sectors.hide();
-                        counties.hide();
-                        censusTracts.show();
-                        $('#workSectorSelection').hide();
-                        $('#sectorSelection').hide();
-                        $('#countySelection').hide();
-                        $('#countyWorkSelection').hide();
-                        $('#ctValueType').hide();
-                        $('#ctWorkValueType').show();
-                        workCensusToggle(ctWorkSelect);
                     }
+                    // } else if (bSelection === 'censusTract'){
+                    //     sectors.hide();
+                    //     counties.hide();
+                    //     censusTracts.show();
+                    //     $('#workSectorSelection').hide();
+                    //     $('#sectorSelection').hide();
+                    //     $('#countySelection').hide();
+                    //     $('#countyWorkSelection').hide();
+                    //     $('#ctValueType').hide();
+                    //     $('#ctWorkValueType').show();
+                    //     workCensusToggle(ctWorkSelect);
+                    // }
                 }
             });
     
@@ -8364,10 +8372,6 @@ $(document).ready(function(){
                 turnOffWorkActiveLayer();
                 workCensusTractsLayer.show();
                 workCensusTractsLayer.selectGraphicsForPathDisplayById('h_id', parseInt(evt), true, 'SELECTION_NEW');
-            }
-    
-            function displayActiveLayer(val){
-                map.getLayer(val).show();
             }
     
             function turnOffActiveLayer(){
@@ -8409,7 +8413,7 @@ $(document).ready(function(){
                 wallerLayer.hide();
                 walkerLayer.hide();
                 whartonLayer.hide();
-                censusTractsLayer.hide();
+                // censusTractsLayer.hide();
             }
     
             function turnOffWorkActiveLayer(){
@@ -8451,7 +8455,7 @@ $(document).ready(function(){
                 workWalker.hide();
                 workWaller.hide();
                 workWharton.hide();
-                workCensusTractsLayer.hide();
+                // workCensusTractsLayer.hide();
             }
     
             //Selection listeners
@@ -8476,60 +8480,67 @@ $(document).ready(function(){
             });
 
             //Since the census tract values are dynamically created we can't the same format as the other layers
-            $('#ctValueType').on('change', function(){
-                censusToggle($('#ctValueType').val());
-            });
+            // $('#ctValueType').on('change', function(){
+            //     censusToggle($('#ctValueType').val());
+            // });
 
-            $('#ctWorkValueType').on('change', function(){
-                workCensusToggle($('#ctWorkValueType').val());
-            });
+            // $('#ctWorkValueType').on('change', function(){
+            //     workCensusToggle($('#ctWorkValueType').val());
+            // });
     
-            legendBtn.addEventListener("click", function(evt){
-                if (evt.target.children.length === 1){
-                    var iconNode = evt.target.children["0"];
-                    iconNode.classList.toggle('icon-ui-maps');
-                    iconNode.classList.toggle('icon-ui-close');
+            // legendBtn.addEventListener("click", function(evt){
+            //     if (evt.target.children.length === 1){
+            //         var iconNode = evt.target.children["0"];
+            //         iconNode.classList.toggle('icon-ui-close');
+            //         iconNode.classList.toggle('icon-ui-maps');
+
+            //         legendDiv.style.display = "none";
+            //         legendDiv2.style.display = "none";
     
-                    if (legendDiv.style.display == "block"){
-                        legendDiv.style.display = "none";
-                    } else {
-                        legendDiv.style.display = "block";
-                    }
-                } else {
-                    var iconNode = evt.target.classList["1"];
-                    evt.target.classList.toggle("icon-ui-maps");
-                    evt.target.classList.toggle("icon-ui-close");
+            //         // if (legendDiv.style.display == "block"){
+            //         //     legendDiv.style.display = "none";
+            //         // } else {
+            //         //     legendDiv.style.display = "block";
+            //         // }
+            //     } else {
+            //         var iconNode = evt.target.classList["1"];
+            //         evt.target.classList.toggle("icon-ui-close");
+            //         evt.target.classList.toggle("icon-ui-maps");
     
-                    if (legendDiv.style.display === "block"){
-                        legendDiv.style.display = "none";
-                    } else {
-                        legendDiv.style.display = "block";
-                    }
-                }
+            //         if ($('#flowSelection').val() === 'homeToWork'){
+            //             legendDiv2.style.display = "none";
+            //             legendDiv.style.display = "block";
+            //         } else {
+            //             legendDiv.style.display = "none";
+            //             legendDiv2.style.display = "block";
+            //         }
+            //     }
                 
-            });
+            // });
     
             //Create a modal as a popup for the destination points to create a graph
             map.on("click", function(evt){
                 var attr = evt.graphic.attributes;
-    
-                if (homeShowBtn.className === "icon-ui-grant icon-ui-white" || homeShowBtn.className === "icon-ui-white icon-ui-grant"){
-                    setHomeGraph(attr);
-            
-                    calcite.bus.emit("modal:open", {id: "baz"});
-                    
-                }
-    
-                if (workShowBtn.className === "icon-ui-white icon-ui-grant"){
-                    setWorkGraph(attr);
-                    calcite.bus.emit("modal:open", {id: "caz"});
-                }
+
+                //If the result of the click has an ObjectID then don't display the popup
+                if (!attr.OBJECTID){
+                    if ($('#flowSelection').val() === 'homeToWork'){
+                        setHomeGraph(attr);
                 
+                        calcite.bus.emit("modal:open", {id: "baz"});
+                        
+                    }
+        
+                    if ($('#flowSelection').val() === 'workToHome'){
+                        setWorkGraph(attr);
+                        calcite.bus.emit("modal:open", {id: "caz"});
+                    }
+                }
             });
     
             //Function to create the home to work graph
             function setHomeGraph(attr){
-                $("#sectorTitle").text(attr.d_sector);
+                $("#sectorTitle").text(attr.d_sector + ' Workers');
                 $("#modalContent").text(number.format(attr.h_Workers) + " workers live in " + attr.h_sector + ", but work in " + attr.d_sector + ".");
                 $("#home").append("<canvas id='workersGraph'></canvas>");
                 var canvas = $("#workersGraph");
@@ -8537,7 +8548,7 @@ $(document).ready(function(){
                 var data = {
                     datasets: [
                         {
-                            data: [attr.Workers2009, attr.Workers2011, attr.Workers2013, attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
+                            data: [attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
                             backgroundColor: ["rgba(255, 0, 0, 0.6)"],
                             borderColor: "rgba(255, 0, 0, 0.6)",
                             fill: false,
@@ -8545,7 +8556,7 @@ $(document).ready(function(){
                             pointBackgroundColor: "rgba(255, 0, 0, 0.6)"
                         }
                     ],
-                    labels: ["2009", "2011", "2013","2014", "2015", "2017"]
+                    labels: ["2014", "2015", "2017"]
                 };
         
                 myChart = new Chart(canvas,{
@@ -8595,7 +8606,7 @@ $(document).ready(function(){
     
             //Create the work to home graph
             function setWorkGraph(attr){
-                $("#workSectorTitle").text(attr.d_sector);
+                $("#workSectorTitle").text(attr.d_sector + ' Workers');
                 $("#workModalContent").text(number.format(attr.h_Workers) + " workers work in " + attr.d_sector + ", but live in " + attr.h_sector + ".");
                 $("#work").append("<canvas id='workGraph'></canvas>");
                 var canvas = $("#workGraph");
@@ -8603,7 +8614,7 @@ $(document).ready(function(){
                 var data = {
                     datasets: [
                         {
-                            data: [attr.Workers2009, attr.Workers2011, attr.Workers2013, attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
+                            data: [attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
                             backgroundColor: ["#0079c1"],
                             borderColor: "#0079c1",
                             fill: false,
@@ -8611,7 +8622,7 @@ $(document).ready(function(){
                             pointBackgroundColor: "#0079c1"
                         }
                     ],
-                    labels: ["2009", "2011", "2013", "2014", "2015", "2017"]
+                    labels: ["2014", "2015", "2017"]
                 };
         
                 myChart = new Chart(canvas,{
