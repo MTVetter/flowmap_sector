@@ -8520,7 +8520,7 @@ $(document).ready(function(){
                 var data = {
                     datasets: [
                         {
-                            data: [attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
+                            data: [attr.Workers2002, attr.Workers2003, attr.Workers2004, attr.Workers2005, attr.Workers2006, attr.Workers2007, attr.Workers2008, attr.Workers2009, attr.Workers2006, attr.Workers2007, attr.Workers2008, attr.Workers2009, attr.Workers2014, attr.Workers2015, attr.Workers2016, attr.h_Workers],
                             backgroundColor: ["rgba(255, 0, 0, 0.6)"],
                             borderColor: "rgba(255, 0, 0, 0.6)",
                             fill: false,
@@ -8528,7 +8528,7 @@ $(document).ready(function(){
                             pointBackgroundColor: "rgba(255, 0, 0, 0.6)"
                         }
                     ],
-                    labels: ["2014", "2015", "2017"]
+                    labels: ["2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014", "2015", "2016", "2017"]
                 };
         
                 myChart = new Chart(canvas,{
@@ -8586,7 +8586,7 @@ $(document).ready(function(){
                 var data = {
                     datasets: [
                         {
-                            data: [attr.h_Workers2014, attr.h_Workers2015, attr.h_Workers],
+                            data: [attr.Workers2002, attr.Workers2003, attr.Workers2004, attr.Workers2005, attr.Workers2006, attr.Workers2007, attr.Workers2008, attr.Workers2009, attr.Workers2006, attr.Workers2007, attr.Workers2008, attr.Workers2009, attr.Workers2014, attr.Workers2015, attr.Workers2016, attr.h_Workers],
                             backgroundColor: ["#0079c1"],
                             borderColor: "#0079c1",
                             fill: false,
@@ -8594,7 +8594,7 @@ $(document).ready(function(){
                             pointBackgroundColor: "#0079c1"
                         }
                     ],
-                    labels: ["2014", "2015", "2017"]
+                    labels: ["2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014", "2015", "2016", "2017"]
                 };
         
                 myChart = new Chart(canvas,{
