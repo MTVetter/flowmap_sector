@@ -8513,7 +8513,7 @@ $(document).ready(function(){
             //Function to create the home to work graph
             function setHomeGraph(attr){
                 $("#sectorTitle").text(attr.d_sector + ' Workers');
-                $("#modalContent").text(number.format(attr.h_Workers) + " workers live in " + attr.h_sector + ", but work in " + attr.d_sector + ".");
+                $("#modalContent").text("In 2017, " +number.format(attr.h_Workers) + " workers live in " + attr.h_sector + ", but work in " + attr.d_sector + ".");
                 $("#home").append("<canvas id='workersGraph'></canvas>");
                 var canvas = $("#workersGraph");
     
@@ -8579,7 +8579,7 @@ $(document).ready(function(){
             //Create the work to home graph
             function setWorkGraph(attr){
                 $("#workSectorTitle").text(attr.d_sector + ' Workers');
-                $("#workModalContent").text(number.format(attr.h_Workers) + " workers work in " + attr.d_sector + ", but live in " + attr.h_sector + ".");
+                $("#workModalContent").text("In 2017, " + number.format(attr.h_Workers) + " workers work in " + attr.d_sector + ", but live in " + attr.h_sector + ".");
                 $("#work").append("<canvas id='workGraph'></canvas>");
                 var canvas = $("#workGraph");
     
